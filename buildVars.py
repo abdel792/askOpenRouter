@@ -28,7 +28,7 @@ addon_info = {
 	You will also need to have an API key, which you can generate after creating your free account.
 	After that, you will be able to display a dialog box that will allow you to either create a new chat or continue an existing one."""),
 	# version
-	"addon_version": "20260217.0.1",
+	"addon_version": "20260218.0.1",
 	# Author(s)
 	"addon_author": "Abdel <abdelkrim.bensaid@gmail.com>",
 	# URL for the add-on documentation support
@@ -40,7 +40,7 @@ addon_info = {
 	# Minimum NVDA version supported (e.g. "2018.3.0", minor version is optional)
 	"addon_minimumNVDAVersion": "2025.1.0",
 	# Last NVDA version supported/tested (e.g. "2018.4.0", ideally more recent than minimum version)
-	"addon_lastTestedNVDAVersion": "2025.3.3",
+	"addon_lastTestedNVDAVersion": "2026.1.0",
 	# Add-on update channel (default is None, denoting stable releases,
 	# and for development releases, use "dev".)
 	# Do not change unless you know what you are doing!
