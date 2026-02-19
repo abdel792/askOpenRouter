@@ -14,12 +14,14 @@ import gui
 from typing import Callable
 from .dialogs import addonSummary, OpenRouterSettingsPanel, ChatDialog
 from gui.settingsDialogs import NVDASettingsDialog
+from .functions import disableInSecureMode
 
 addonHandler.initTranslation()
 
 _: Callable[[str], str]
 
 
+@disableInSecureMode
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	scriptCategory = addonSummary
 

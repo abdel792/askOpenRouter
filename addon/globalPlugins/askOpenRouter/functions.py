@@ -6,6 +6,8 @@
 # See the file COPYING for more details.
 
 import wx
+import globalPluginHandler
+import globalVars
 import os
 import addonHandler
 import pickle
@@ -31,6 +33,15 @@ _unavailableModels: Dict[str, float] = {}
 _RATE_LIMIT_COOLDOWN: int = 300      # 429
 _POLICY_COOLDOWN: int = 180         # 404
 _PAYMENT_COOLDOWN: int = 1800       # 402
+
+
+def disableInSecureMode(decoratedCls):
+	"""
+	Decorator created by Luke Davis, member of the nvda-addons mailing list.
+	"""
+	if globalVars.appArgs.secure:
+		return globalPluginHandler.GlobalPlugin
+	return decoratedCls
 
 
 def saveModel(model: str, filename: str) -> None:
