@@ -21,17 +21,17 @@ addon_info = AddonInfo(
 	addon_summary=_("Ask OpenRouter"),
 	# Add-on description
 	# Translators: Long description to be shown for this add-on on add-on information from add-on store
-	addon_description=_("""
-This add-on allows you to ask questions to the free models available on the on OpenRouter platform.
-It is therefore essential to have a free account that you can create on 'https://openrouter.ai'.
-You will also need to have an API key, which you can generate after creating your free account.
-After that, you will be able to display a dialog box that will allow you to either create a new chat or continue an existing one."""),
+	addon_description=_("""This add-on allows you to ask questions to Artificial Intelligence models available on the OpenRouter platform.
+You can either use automatic random selection of free models or choose a specific model manually, including paid ones.
+To use this add-on, you must create an account on https://openrouter.ai and generate an API key.
+Once configured, you can open a dialog that lets you start a new conversation or continue an existing one."""),
 	# version
-	addon_version="20260219.0.1",
+	addon_version="20260220.0.1",
 	# Brief changelog for this version
 	# Translators: what's new content for the add-on version to be shown in the add-on store
-	addon_changelog=_("""Changes for 20260219.0.1
-Using the latest version of the addonTemplate."""),
+	addon_changelog=_("""Changes for 20260220.0.1
+Added the ability to manually choose the model you want to use from a list box in the settings panel.
+The model list also includes paid models for users who have OpenRouter credits."""),
 	# Author(s)
 	addon_author="Abdelkrim BENSAÏD <abdelkrim.bensaid@gmail.com>",
 	# URL for the add-on documentation support

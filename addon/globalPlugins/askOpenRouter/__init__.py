@@ -31,14 +31,16 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		if "askOpenRouter" not in config.conf.spec:
 			config.conf.spec["askOpenRouter"] = {
 				"apiKey": "string(default='')",
-				"fullHistory": "boolean(default=True)"
+				"fullHistory": "boolean(default=True)",
+				"useAllModels": "boolean(default=False)",
+				"selectedModel": "string(default='')"
 			}
 
 		gui.settingsDialogs.NVDASettingsDialog.categoryClasses.append(
 			OpenRouterSettingsPanel
 		)
 
-	def terminate(self) -> None:
+	def terminate(self):
 		if OpenRouterSettingsPanel in gui.settingsDialogs.NVDASettingsDialog.categoryClasses:
 			gui.settingsDialogs.NVDASettingsDialog.categoryClasses.remove(
 				OpenRouterSettingsPanel

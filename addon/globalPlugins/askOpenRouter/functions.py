@@ -20,7 +20,7 @@ import gui
 import urllib.request
 import urllib.error
 import time
-from typing import List, Dict, Callable, Optional
+from typing import List, Dict, Callable, Optional, Any
 addonHandler.initTranslation()
 
 
@@ -203,6 +203,69 @@ def getRandomFreeModel(apiKey: str) -> str:
 	return random.choice(candidates)
 
 
+def getAvailableModels(apiKey: str) -> List[Dict[str, object]]:
+	"""
+	Retrieve the full list of available models for the current user.
+
+	This function queries the OpenRouter API and returns all models
+	accessible with the provided API key, including both free and
+	paid models.
+
+	Each returned entry contains:
+		- id (str): Model identifier
+		- promptPricing (float): Cost per prompt token
+		- completionPricing (float): Cost per completion token
+		- contextLength (int): Maximum context length
+		- deprecated (bool): Whether the model is deprecated
+
+	Filters:
+		- Excludes deprecated models
+		- Requires provider and context length
+
+	Args:
+		apiKey (str): OpenRouter API key.
+
+	Returns:
+		List[Dict[str, object]]: List of available model metadata.
+
+	Raises:
+		urllib.error.URLError: If network request fails.
+		urllib.error.HTTPError: If API request fails.
+	"""
+	modelsURL: str = "https://openrouter.ai/api/v1/models"
+
+	headers: Dict[str, str] = {
+		"Authorization": f"Bearer {apiKey}",
+		"User-Agent": "Python-urllib",
+	}
+
+	req = urllib.request.Request(modelsURL, headers=headers, method="GET")
+
+	with urllib.request.urlopen(req) as response:
+		data = json.loads(response.read().decode("utf-8"))
+
+	models = data.get("data", [])
+
+	availableModels: List[Dict[str, object]] = []
+
+	for m in models:
+		if m.get("deprecated", False):
+			continue
+
+		if not m.get("top_provider") or not m.get("context_length"):
+			continue
+
+		availableModels.append({
+			"id": m.get("id"),
+			"promptPricing": float(m.get("pricing", {}).get("prompt", 0)),
+			"completionPricing": float(m.get("pricing", {}).get("completion", 0)),
+			"contextLength": m.get("context_length"),
+			"deprecated": m.get("deprecated", False),
+		})
+
+	return availableModels
+
+
 def _sendRequest(url: str, headers: Dict[str, str], data: Dict) -> str:
 	"""
 	Send an HTTP POST request to OpenRouter.
@@ -292,29 +355,34 @@ def getHistory(filename: str) -> str:
 	return markdownToHtml(markdownText)
 
 
-def askOpenRouter(prompt: str, apiKey: str, new: bool = True) -> None:  # noqa: C901
+def askOpenRouter(prompt: str, apiKey: str, new: bool = True) -> None:
 	"""
-	Send a prompt to OpenRouter with intelligent retry handling.
-
-	Automatically retries with different free models if:
-		- HTTP 402 (payment required)
-		- HTTP 404 (policy/endpoint issue)
-		- HTTP 429 (rate limit)
+	Send a prompt to OpenRouter and display the response in NVDA.
 
 	Args:
-		prompt (str): User input text.
-		apiKey (str): OpenRouter API key.
-		new (bool, optional): Whether to start a new conversation.
+		prompt (str):
+			The user's input message to send to the model.
+		apiKey (str):
+			The OpenRouter API key used for authentication.
+		new (bool, optional):
+			If True, starts a new conversation by clearing stored history
+			and model files. If False, continues the previous conversation.
+			Defaults to True.
 
 	Returns:
 		None
 	"""
+
 	url: str = "https://openrouter.ai/api/v1/chat/completions"
 
 	addonPath: str = addonHandler.getCodeAddon().path
 	historyFile: str = os.path.join(addonPath, "open_router_history.pkl")
 	modelFile: str = os.path.join(addonPath, "model.txt")
 
+	useAll: bool = config.conf["askOpenRouter"].get("useAllModels", False)
+	selectedModel: str = config.conf["askOpenRouter"].get("selectedModel", "")
+
+	# Reset conversation if requested
 	if new:
 		if os.path.exists(historyFile):
 			os.remove(historyFile)
@@ -323,18 +391,41 @@ def askOpenRouter(prompt: str, apiKey: str, new: bool = True) -> None:  # noqa: 
 
 	model: str = loadModel(modelFile)
 
-	if not model:
-		try:
-			model = getRandomFreeModel(apiKey)
+	# Model selection logic
+	if new:
+		if useAll and selectedModel:
+			model = selectedModel
 			saveModel(model, modelFile)
-		except RuntimeError:
-			ui.browseableMessage(
-				# Translators: Message informing that no free models are available.
-				_("No free model available at the moment."),
-				# Translators: Title of the error message.
-				title=_("Model Error")
-			)
-			return
+		else:
+			try:
+				model = getRandomFreeModel(apiKey)
+				saveModel(model, modelFile)
+			except RuntimeError:
+				ui.browseableMessage(
+					# Translators: Message informing that no free models are available.
+					_("No free model available at the moment."),
+					# Translators: Title of the error message.
+					title=_("Model Error")
+				)
+				return
+
+	elif not model:
+		# Continuing conversation but no stored model
+		if useAll and selectedModel:
+			model = selectedModel
+			saveModel(model, modelFile)
+		else:
+			try:
+				model = getRandomFreeModel(apiKey)
+				saveModel(model, modelFile)
+			except RuntimeError:
+				ui.browseableMessage(
+					# Translators: Message informing that no free models are available.
+					_("No free model available at the moment."),
+					# Translators: Title of the error message.
+					title=_("Model Error")
+				)
+				return
 
 	history: List[Dict[str, str]] = loadHistory(historyFile)
 
@@ -350,7 +441,7 @@ def askOpenRouter(prompt: str, apiKey: str, new: bool = True) -> None:  # noqa: 
 		"X-Title": "My question"
 	}
 
-	data: Dict = {
+	data: Dict[str, Any] = {
 		"model": model,
 		"messages": history
 	}
@@ -365,6 +456,17 @@ def askOpenRouter(prompt: str, apiKey: str, new: bool = True) -> None:  # noqa: 
 			break
 
 		except urllib.error.HTTPError as e:
+
+			# If the user uses their own paid model, do not fallback
+			if useAll:
+				ui.browseableMessage(
+					f"HTTP Error: {e.code}, {e.read().decode('utf-8')}",
+					# Translators: Title of the HTTP error message.
+					title=_("HTTP Error")
+				)
+				return
+
+			# Free model mode: retry on specific errors
 			if e.code in (402, 404, 429):
 				_markModelUnavailable(model, e.code)
 
@@ -380,7 +482,7 @@ def askOpenRouter(prompt: str, apiKey: str, new: bool = True) -> None:  # noqa: 
 			else:
 				ui.browseableMessage(
 					f"HTTP Error: {e.code}, {e.read().decode('utf-8')}",
-					# Translators: Title of the error message.
+					# Translators: Title of the HTTP error message.
 					title=_("HTTP Error")
 				)
 				return
@@ -397,7 +499,7 @@ def askOpenRouter(prompt: str, apiKey: str, new: bool = True) -> None:  # noqa: 
 		ui.browseableMessage(
 			# Translators: Message informing that no free models are available at the moment.
 			_("All free models are currently unavailable. Please try again later."),
-			# Translators: Title of the error message.
+			# Translators: Title of the model unavailable error.
 			title=_("Model Unavailable")
 		)
 		return
@@ -410,6 +512,7 @@ def askOpenRouter(prompt: str, apiKey: str, new: bool = True) -> None:  # noqa: 
 	saveHistory(history, historyFile)
 
 	answerHtml: str = markdownToHtml(answer)
+
 	if config.conf["askOpenRouter"]["fullHistory"]:
 		messageToDisplay: str = getHistory(historyFile)
 	else:

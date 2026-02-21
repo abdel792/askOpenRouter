@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2026-02-17 08:41+0100\n"
-"PO-Revision-Date: 2026-02-17 08:59+0100\n"
+"POT-Creation-Date: 2026-02-21 23:17+0100\n"
+"PO-Revision-Date: 2026-02-21 23:27+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -13,174 +13,200 @@ msgstr ""
 "X-Generator: Poedit 3.8\n"
 "X-Poedit-Basepath: .\n"
 
+#. Translators: Title of the dialog box.
+#: addon\globalPlugins\askOpenRouter\dialogs.py:57
+msgid "Chat Manager"
+msgstr "Gérer les discussion"
+
+#. Translators: Prompt label to create a new chat.
+#: addon\globalPlugins\askOpenRouter\dialogs.py:72
+msgid "C&reate a New Chat"
+msgstr "C&réer une nouvelle discussion"
+
+#. Translators: Prompt label to continue an existing chat.
+#: addon\globalPlugins\askOpenRouter\dialogs.py:78
+msgid "Co&ntinue a Chat"
+msgstr "Con&tinuer une discussion existante"
+
+#. Translators: Label of the closing button.
+#: addon\globalPlugins\askOpenRouter\dialogs.py:84
+msgid "&Close"
+msgstr "&Fermer"
+
+#. Translators: Title of the dialog box to start a new chat.
+#: addon\globalPlugins\askOpenRouter\dialogs.py:121
+msgid "New Chat"
+msgstr "Nouvelle discussion"
+
+#. Translators: Title of the dialog box to continue an existing chat.
+#: addon\globalPlugins\askOpenRouter\dialogs.py:131
+msgid "Continue Chat"
+msgstr "Continuer la discussion"
+
+#. Translators: Label of the field that must contain the OpenRouter API key.
+#: addon\globalPlugins\askOpenRouter\dialogs.py:172
+msgid "OpenRouter API Key:"
+msgstr "Clé API OpenRouter :"
+
+#. Translators: Label of the checkbox to display the OpenRouter API key.
+#: addon\globalPlugins\askOpenRouter\dialogs.py:193
+msgid "Show API key"
+msgstr "Afficher la clé API"
+
+#. Translators: Label of the checkbox to display chat history.
+#: addon\globalPlugins\askOpenRouter\dialogs.py:209
+msgid "Display the full chat history for continuous discussions"
+msgstr "Afficher l'historique complet pour les discussions continues"
+
+#. Translators:
+#. Translators: Label of the checkbox to show the list of models, including paid ones.
+#: addon\globalPlugins\askOpenRouter\dialogs.py:225
+msgid "Use all models, including paid ones."
+msgstr "Utilisez tous les modèles, y compris les modèles payants."
+
+#. Translators: Message informing that no free model is available.
+#: addon\globalPlugins\askOpenRouter\functions.py:201
+msgid "No free model currently available."
+msgstr "Aucun modèle gratuit disponible actuellement."
+
+#. Translators: Message announcing what the user said.
+#: addon\globalPlugins\askOpenRouter\functions.py:332
+msgid "You said:"
+msgstr "Vous avez dit :"
+
+#. Translators: Message announcing what the model responded.
+#: addon\globalPlugins\askOpenRouter\functions.py:334
+msgid "Model replied:"
+msgstr "Le modèle a répondu :"
+
+#. Translators: Message informing that no free models are available.
+#: addon\globalPlugins\askOpenRouter\functions.py:406
+#: addon\globalPlugins\askOpenRouter\functions.py:424
+msgid "No free model available at the moment."
+msgstr "Aucun modèle gratuit disponible pour le moment."
+
+#. Translators: Title of the error message.
+#: addon\globalPlugins\askOpenRouter\functions.py:408
+#: addon\globalPlugins\askOpenRouter\functions.py:426
+msgid "Model Error"
+msgstr "Erreur de modèle"
+
+#. Translators: Title of the HTTP error message.
+#: addon\globalPlugins\askOpenRouter\functions.py:465
+#: addon\globalPlugins\askOpenRouter\functions.py:486
+msgid "HTTP Error"
+msgstr "Erreur HTTP"
+
+#. Translators: Message informing that no free models are available at the moment.
+#: addon\globalPlugins\askOpenRouter\functions.py:501
+msgid "All free models are currently unavailable. Please try again later."
+msgstr ""
+"Tous les modèles gratuits sont actuellement indisponibles. Veuillez "
+"réessayer plus tard."
+
+#. Translators: Title of the model unavailable error.
+#: addon\globalPlugins\askOpenRouter\functions.py:503
+msgid "Model Unavailable"
+msgstr "Modèle indisponible"
+
+#. Translators: Title of the model response message.
+#: addon\globalPlugins\askOpenRouter\functions.py:524
+msgid "Model Response"
+msgstr "Réponse du modèle"
+
+#. Translators: Message inviting the user to enter his question.
+#: addon\globalPlugins\askOpenRouter\functions.py:556
+msgid "Please enter the question you want to ask OpenRouter"
+msgstr "Veuillez entrer la question que vous souhaitez poser à OpenRouter"
+
+#. Translators: Message informing the user that the field is empty, he must fill it in.
+#: addon\globalPlugins\askOpenRouter\functions.py:566
+msgid "You did not enter anything. Please try again."
+msgstr "Vous n'avez rien saisi. Veuillez réessayer."
+
+#. Translators: Title of the error message.
+#: addon\globalPlugins\askOpenRouter\functions.py:568
+msgid "Input Error"
+msgstr "Erreur de saisie"
+
+#. Translators: Message informing the user that no API key is configured.
+#: addon\globalPlugins\askOpenRouter\functions.py:577
+msgid "No API key is configured. Please configure it in settings."
+msgstr ""
+"Aucune clé API n'est configurée. Veuillez le faire dans les paramètres."
+
+#. Translators: Title of the error message.
+#: addon\globalPlugins\askOpenRouter\functions.py:579
+msgid "Configuration Error"
+msgstr "Erreur de configuration"
+
 #. Translators: Description of the script which opens the interaction dialog box with OpenRouter.
-#: addon\globalPlugins\askOpenRouter\__init__.py:42
+#: addon\globalPlugins\askOpenRouter\__init__.py:57
 msgid "Opens a dialog allowing the user to ask questions to OpenRouter"
 msgstr ""
 "Ouvre une boîte de dialogue permettant à l'utilisateur de poser des "
 "questions à OpenRouter"
 
 #. Translators: Description of the script which allows to create a new chat.
-#: addon\globalPlugins\askOpenRouter\__init__.py:54
+#: addon\globalPlugins\askOpenRouter\__init__.py:65
 msgid "Opens the prompt to start a new OpenRouter chat."
 msgstr "Ouvre l'invite pour démarrer une nouvelle discussion OpenRouter."
 
-#. Translators: Title of the dialog box for creating a new chat with OpenRouter.
-#: addon\globalPlugins\askOpenRouter\__init__.py:59
-#: addon\globalPlugins\askOpenRouter\dialogs.py:109
-msgid "New Chat"
-msgstr "Nouvelle discussion"
-
 #. Translators: Description of the script which allows to continue an existing chat.
-#: addon\globalPlugins\askOpenRouter\__init__.py:65
+#: addon\globalPlugins\askOpenRouter\__init__.py:73
 msgid "Opens the prompt to continue an existing OpenRouter chat."
 msgstr "Ouvre l'invite pour continuer une discussion OpenRouter existante."
 
-#. Translators: Title of the dialog box for continuing a chat with OpenRouter.
-#: addon\globalPlugins\askOpenRouter\__init__.py:70
-#: addon\globalPlugins\askOpenRouter\dialogs.py:122
-msgid "Continue Chat"
-msgstr "Continuer la discussion"
-
 #. Translators: Description of the script which allows to show OpenRouter settings panel..
-#: addon\globalPlugins\askOpenRouter\__init__.py:77
+#: addon\globalPlugins\askOpenRouter\__init__.py:81
 msgid "Opens the add-on settings panel."
 msgstr "Ouvre le panneau des paramètres de l'extension."
 
-#. Translators: The title of the chat dialog.
-#: addon\globalPlugins\askOpenRouter\dialogs.py:43
-msgid "Chat Manager"
-msgstr "Gérer les discussion"
-
-#. Translators: Message informing the user that he's creating a new chat.
-#: addon\globalPlugins\askOpenRouter\dialogs.py:55
-msgid "C&reate a New Chat"
-msgstr "C&réer une nouvelle discussion"
-
-#. Translators: Message informing the user that hi's continuing a chat.
-#: addon\globalPlugins\askOpenRouter\dialogs.py:61
-msgid "Co&ntinue a Chat"
-msgstr "Con&tinuer une discussion existante"
-
-#. Translators: A button to close the dialog.
-#: addon\globalPlugins\askOpenRouter\dialogs.py:67
-msgid "&Close"
-msgstr "&Fermer"
-
-#. Translators: A field to enter the OpenRouter API key.
-#: addon\globalPlugins\askOpenRouter\dialogs.py:156
-msgid "OpenRouter API Key:"
-msgstr "Clé API OpenRouter :"
-
-#. Translators: A checkbox to show the API key.
-#: addon\globalPlugins\askOpenRouter\dialogs.py:184
-msgid "Show API key"
-msgstr "Afficher la clé API"
-
-#. Translators: A checkbox to choose whether to display the full history in the responses.
-#: addon\globalPlugins\askOpenRouter\dialogs.py:195
-msgid "Display the full chat history for continuous discussions"
-msgstr "Afficher l'historique complet pour les discussions continues"
-
-#. Translators: Message informing that no free model is available.
-#: addon\globalPlugins\askOpenRouter\functions.py:185
-msgid "No free model currently available."
-msgstr "Aucun modèle gratuit disponible actuellement."
-
-#. Translators: Message announcing what the user said.
-#: addon\globalPlugins\askOpenRouter\functions.py:253
-msgid "You said:"
-msgstr "Vous avez dit :"
-
-#. Translators: Message announcing what the model responded.
-#: addon\globalPlugins\askOpenRouter\functions.py:255
-msgid "Model replied:"
-msgstr "Le modèle a répondu :"
-
-#. Translators: Message informing that no free models are available.
-#: addon\globalPlugins\askOpenRouter\functions.py:317
-msgid "No free model available at the moment."
-msgstr "Aucun modèle gratuit disponible pour le moment."
-
-#. Translators: Title of the error message.
-#: addon\globalPlugins\askOpenRouter\functions.py:319
-msgid "Model Error"
-msgstr "Erreur de modèle"
-
-#. Translators: Title of the error message.
-#: addon\globalPlugins\askOpenRouter\functions.py:368
-msgid "HTTP Error"
-msgstr "Erreur HTTP"
-
-#. Translators: Message informing that no free models are available at the moment.
-#: addon\globalPlugins\askOpenRouter\functions.py:383
-msgid "All free models are currently unavailable. Please try again later."
-msgstr ""
-"Tous les modèles gratuits sont actuellement indisponibles. Veuillez "
-"réessayer plus tard."
-
-#. Translators: Title of the error message.
-#: addon\globalPlugins\askOpenRouter\functions.py:385
-msgid "Model Unavailable"
-msgstr "Modèle indisponible"
-
-#. Translators: Title of the model response message.
-#: addon\globalPlugins\askOpenRouter\functions.py:405
-msgid "Model Response"
-msgstr "Réponse du modèle"
-
-#. Translators: Message inviting the user to enter his question.
-#: addon\globalPlugins\askOpenRouter\functions.py:435
-msgid "Please enter the question you want to ask OpenRouter"
-msgstr "Veuillez entrer la question que vous souhaitez poser à OpenRouter"
-
-#. Translators: Message informing the user that the field is empty, he must fill it in.
-#: addon\globalPlugins\askOpenRouter\functions.py:445
-msgid "You did not enter anything. Please try again."
-msgstr "Vous n'avez rien saisi. Veuillez réessayer."
-
-#. Translators: Title of the error message.
-#: addon\globalPlugins\askOpenRouter\functions.py:447
-msgid "Input Error"
-msgstr "Erreur de saisie"
-
-#. Translators: Message informing the user that no API key is configured.
-#: addon\globalPlugins\askOpenRouter\functions.py:456
-msgid "No API key is configured. Please configure it in settings."
-msgstr ""
-"Aucune clé API n'est configurée. Veuillez le faire dans les paramètres."
-
-#. Translators: Title of the error message.
-#: addon\globalPlugins\askOpenRouter\functions.py:458
-msgid "Configuration Error"
-msgstr "Erreur de configuration"
-
-#. Add-on summary, usually the user visible name of the addon.
-#. Translators: Summary for this add-on
-#. to be shown on installation and add-on information found in Add-ons Manager.
-#: buildVars.py:23
+#. Add-on summary/title, usually the user visible name of the add-on
+#. Translators: Summary/title for this add-on
+#. to be shown on installation and add-on information found in add-on store
+#: buildVars.py:21
 msgid "Ask OpenRouter"
 msgstr "Demandez à OpenRouter"
 
 #. Add-on description
-#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
-#: buildVars.py:26
+#. Translators: Long description to be shown for this add-on on add-on information from add-on store
+#: buildVars.py:24
 msgid ""
-"This add-on allows you to ask questions to the free models available on the "
-"on OpenRouter platform.\n"
-"\tIt is therefore essential to have a free account that you can create on "
-"'https://openrouter.ai'.\n"
-"\tYou will also need to have an API key, which you can generate after "
-"creating your free account.\n"
-"\tAfter that, you will be able to display a dialog box that will allow you "
-"to either create a new chat or continue an existing one."
+"This add-on allows you to ask questions to Artificial Intelligence models "
+"available on the OpenRouter platform.\n"
+"You can either use automatic random selection of free models or choose a "
+"specific model manually, including paid ones.\n"
+"To use this add-on, you must create an account on https://openrouter.ai and "
+"generate an API key.\n"
+"Once configured, you can open a dialog that lets you start a new "
+"conversation or continue an existing one."
 msgstr ""
-"Ce module complémentaire vous permet de poser des questions aux modèles "
-"gratuits disponibles sur la plateforme OpenRouter.\n"
-"\tIl est donc indispensable d'avoir un compte gratuit que vous pourrez "
-"créer sur 'https://openrouter.ai'.\n"
-"\tVous devrez également disposer d'une clé API, que vous pourrez générer "
-"après avoir créé votre compte gratuit.\n"
-"\tAprès cela, vous pourrez afficher une boîte de dialogue qui vous "
-"permettra soit de créer une nouvelle discussion, soit de poursuivre une "
-"discussion existante."
+"Cette extension vous permet de poser des questions aux modèles "
+"d'intelligence artificielle disponibles sur la plateforme OpenRouter.\n"
+"Vous pouvez soit utiliser la sélection aléatoire automatique de modèles "
+"gratuits, soit choisir manuellement un modèle spécifique, incluant les "
+"modèles payants.\n"
+"Pour utiliser cette extension, vous devez créer un compte sur https://"
+"openrouter.ai et générer une clé API.\n"
+"\vCette clé API devra alors être collée dans le panneau des paramètre de "
+"l'extension.\n"
+"Une fois l'extension configurée, vous pourrez ouvrir une boîte de dialogue "
+"qui vous permettra de démarrer une nouvelle conversation ou de poursuivre "
+"une conversation existante."
+
+#. Brief changelog for this version
+#. Translators: what's new content for the add-on version to be shown in the add-on store
+#: buildVars.py:32
+msgid ""
+"Changes for 20260220.0.1\n"
+"Added the ability to manually choose the model you want to use from a list "
+"box in the settings panel.\n"
+"The model list also includes paid models for users who have OpenRouter "
+"credits."
+msgstr ""
+"Changements pour 20260220.0.1\n"
+"Ajout de la possibilité de choisir manuellement le modèle que vous souhaitez "
+"utiliser dans une zone de liste depuis le panneau des paramètres.\n"
+"Cette liste de modèles comprend également des modèles payants pour les "
+"utilisateurs disposant de crédits OpenRouter."
