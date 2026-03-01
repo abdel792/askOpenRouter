@@ -6,8 +6,6 @@ The add-on supports both:
 * Automatic random selection of free models
 * Manual selection of any available model (including paid ones)
 
-*--
-
 ## Key Features
 
 * **Quick Access**: Open the chat interface anytime with a global shortcut.
@@ -15,8 +13,6 @@ The add-on supports both:
 * **Smart Free Model Rotation**: Automatically selects a random free model to optimize daily usage quotas.
 * **Manual Model Selection**: Choose a specific model (including paid models) from the settings panel.
 * **Accessible Results**: View responses in a clear, easy-to-navigate window with optional full history display.
-
-*--
 
 ## Configuration: Obtaining and Installing Your API Key
 
@@ -27,38 +23,34 @@ Even when using free models, the key is required to identify your requests.
 ### 1. How to get an API key
 
 1. Go to [OpenRouter.ai](https://openrouter.ai/).
-2. Create an account by clicking **"Sign up"** (you can sign in with a GitHub, Google or MetaMask account, or your email address).
-3. Once logged in, navigate to the **"Keys"** section in your dashboard, or go directly to: https://openrouter.ai/keys
-4. Click the **"Create Key"** button.
-5. Give your key a name (for example: "My OpenRouter API key") and click **"Create"**.
+2. Create an account by clicking "**Sign up**" (you can sign in with a GitHub, Google or MetaMask account, or your email address).
+3. Once logged in, navigate to the "**Keys**" section in your dashboard, or go directly to: https://openrouter.ai/keys
+4. Click the "**Create Key**" button.
+5. Give your key a name (for example: "My OpenRouter API key") and click "**Create**".
 6. **Important:** Your key will be displayed only once. Copy it immediately and store it in a secure place.
-
-*--
 
 ### 2. Setting up the key in NVDA
 
 1. Open the NVDA menu (**NVDA + N**).
 2. Navigate to **Preferences**, then **Settings**.
-3. In the categories list, select **"Ask OpenRouter"**.
-4. Paste your API key into the **"OpenRouter API Key"** field.
+3. In the categories list, select "**Ask OpenRouter**".
+4. Paste your API key into the "**OpenRouter API Key**" field.
 5. Press **OK** to save.
 
 #### Show API Key
 
-In the NVDA settings panel, just after the **"OpenRouter API Key"** field, there is a checkbox labeled:
+In the NVDA settings panel, just after the "**OpenRouter API Key**" field, there is a checkbox labeled:
 
-**"Show API key"**
+"**Show API key**"
 
 If checked, the characters of the API key become visible.  
 By default, they are hidden for security reasons.
-
-*--
 
 ## Model Selection Settings
 
 In the **Ask OpenRouter** settings category, you will find a new option:
 
-### **"Use all models, including paid ones"**
+### "**Use all models, including paid ones**"
 
 This option controls how models are selected.
 
@@ -101,8 +93,6 @@ Press:
 You can change this gesture in:
 NVDA menu → Preferences → Input Gestures → Ask OpenRouter
 
-*--
-
 ### Main Interface
 
 The dialog contains three buttons:
@@ -110,8 +100,6 @@ The dialog contains three buttons:
 1. **New Chat** – Starts a brand new conversation.
 2. **Continue Chat** – Resumes the previous conversation (keeps history).
 3. **Close** – Closes the dialog (Escape also works).
-
-*--
 
 ### Entering Your Prompt
 
@@ -123,19 +111,15 @@ After selecting "New Chat" or "Continue Chat":
   - Press **Tab** to reach the **OK** button.
   - Press **Enter**.
 
-*--
-
 ### Reading the Response
 
 After processing, a results window appears containing:
 
-* **"You said:"** followed by your message.
-* **"The model replied:"** followed by the response.
-* A **"Copy"** button to copy the response.
+* "**You said:**" followed by your message.
+* "**The model replied:**" followed by the response.
+* A "**Copy**" button to copy the response.
 
 If full history display is enabled, each exchange is clearly separated by headings, making it easy to navigate using your NVDA's quick navigation keys.
-
-*--
 
 ## Display Options
 
@@ -145,10 +129,8 @@ If you prefer to only display the latest response instead of the full conversati
 2. Go to **Preferences → Settings**.
 3. Select **Ask OpenRouter**.
 4. Uncheck:
-   **"Display the full chat history for continuous discussions"**
+   "**Display the full chat history for continuous discussions**"
 5. Press **OK**.
-
-*--
 
 ## Unassigned Scripts
 
@@ -163,13 +145,11 @@ Available scripts:
 * Start a new chat directly
 * Continue an existing chat directly
 
-*--
-
 ## Free Models, Paid Models and Quotas
 
 ### Free Model Usage
 
-When **"Use all models, including paid ones"** is unchecked:
+When "**Use all models, including paid ones**" is unchecked:
 
 * Only models labeled as **free** on OpenRouter are used.
 * Free models have:
@@ -179,11 +159,9 @@ When **"Use all models, including paid ones"** is unchecked:
 
 The add-on automatically rotates between free models to improve availability.
 
-*--
-
 ### Paid Model Usage
 
-When **"Use all models, including paid ones"** is checked:
+When "**Use all models, including paid ones**" is checked:
 
 * The add-on uses the exact model you selected.
 * This may include paid models.
@@ -197,8 +175,6 @@ Errors such as:
 
 are displayed directly to inform you of the issue.
 
-*--
-
 ## Privacy Settings Reminder
 
 If you use free models and receive an error mentioning:
@@ -211,19 +187,15 @@ https://openrouter.ai/settings/privacy
 
 Ensure that public/free model endpoints are allowed.
 
-*--
-
-## Summary
-
-Ask OpenRouter now supports:
-
-* Automatic random selection of free models
-* Manual selection of any available model
-* Full conversation history or last-response-only mode
-* Intelligent handling of free model rate limits
-
-This flexibility allows both casual free usage and advanced paid model usage directly within NVDA.
-
 ## Compatibility ##
 
 * This add-on is compatible with the versions of NVDA ranging from 2025.1 and beyond.
+
+## Changes for 20260221.0.0
+
+* Added manual selection of any available model from the settings panel
+* Added ability to use paid models
+
+## Changes for 20260217.0.0
+
+* Initial version

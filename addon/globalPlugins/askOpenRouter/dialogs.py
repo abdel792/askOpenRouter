@@ -18,10 +18,7 @@ _: Callable[[str], str]
 addonSummary: str = addonHandler.getCodeAddon().manifest["summary"]
 
 
-# ==========================================================
 # Chat Dialog
-# ==========================================================
-
 class ChatDialog(wx.Dialog):
 	"""
 	Dialog for managing OpenRouter chat sessions.
@@ -134,10 +131,8 @@ class ChatDialog(wx.Dialog):
 		)
 
 
-# ==========================================================
-# Settings Panel
-# ==========================================================
 
+# Settings Panel
 class OpenRouterSettingsPanel(SettingsPanel):
 	"""
 	NVDA settings panel for configuring OpenRouter integration.
