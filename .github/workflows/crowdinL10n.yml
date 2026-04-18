@@ -49,7 +49,7 @@ jobs:
       - name: Download translations from Crowdin
         shell: pwsh
         run: |
-          uv run _l10n/l10nUtil.exe exportTranslations -o _addonL10n -c addon
+          uv run l10nUtil.exe exportTranslations -o _addonL10n -c addon
 
           New-Item -ItemType Directory -Force -Path addon/locale | Out-Null
           New-Item -ItemType Directory -Force -Path addon/doc | Out-Null
