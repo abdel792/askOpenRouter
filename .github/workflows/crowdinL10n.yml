@@ -32,17 +32,20 @@ jobs:
         with:
           python-version-file: ".python-version"
 
-      - name: Install the latest version of uv
+      - name: Install uv
         uses: astral-sh/setup-uv@v7
+
+      - name: Install dependencies
+        run: uv pip install polib
 
       - name: Get add-on info
         id: getAddonInfo
         shell: pwsh
         run: |
           uv sync
-          uv run ./.github/workflows/setOutputs.py
+          uv run ./.github/scripts/setOutputs.py
 
-      - name: Download l10nUtil from nvdal10n
+      - name: Download l10nUtil
         run: |
           gh release download --repo nvaccess/nvdaL10n --pattern "l10nUtil.exe"
 
@@ -50,102 +53,112 @@ jobs:
         shell: pwsh
         run: |
           ./l10nUtil.exe exportTranslations -o _addonL10n -c addon
+
           New-Item -ItemType Directory -Force -Path addon/locale | Out-Null
           New-Item -ItemType Directory -Force -Path addon/doc | Out-Null
 
-          foreach ($dir in Get-ChildItem -Path "_addonL10n/${{ steps.getAddonInfo.outputs.addonId }}" -Directory) {
+          $addonId = "${{ steps.getAddonInfo.outputs.addonId }}"
+
+          foreach ($dir in Get-ChildItem -Path "_addonL10n/$addonId" -Directory) {
 
             Write-Host "=============================="
             Write-Host "Processing: $($dir.Name)"
             Write-Host "=============================="
 
+            # ============================
+            # LANG SETUP (IMPORTANT)
+            # ============================
             $langCode = $dir.Name
 
-            # =========================================================
-            # PO FILE (don't overwrite if same as english)
-            # =========================================================
-            $poFile = Join-Path $dir.FullName "${{ steps.getAddonInfo.outputs.addonId }}.po"
+            # ============================
+            # FILE PATHS
+            # ============================
+            $poFile = Join-Path $dir.FullName "$addonId.po"
             $localPoPath = "addon/locale/$langCode/LC_MESSAGES/nvda.po"
-            $englishPoPath = "_addonL10n/${{ steps.getAddonInfo.outputs.addonId }}/en/${{ steps.getAddonInfo.outputs.addonId }}.po"
 
-            if (Test-Path -PathType Leaf $poFile) {
-
-              $shouldUpdatePo = $true
-
-              if (Test-Path $englishPoPath) {
-
-                $crowdinPo = Get-Content $poFile -Raw
-                $englishPo = Get-Content $englishPoPath -Raw
-
-                if ($crowdinPo -eq $englishPo) {
-                  Write-Host "PO identical to English → skip $langCode"
-                  $shouldUpdatePo = $false
-                }
-              }
-
-              if ($shouldUpdatePo) {
-                $targetDir = "addon/locale/$langCode/LC_MESSAGES"
-                New-Item -ItemType Directory -Force -Path $targetDir | Out-Null
-
-                Write-Host "Updating PO for $langCode"
-                Move-Item -Path $poFile -Destination "$targetDir/nvda.po" -Force
-              }
-            }
-
-            # =========================================================
-            # XLIFF → MD (comparison with existing file)
-            # =========================================================
-            $xliffFile = Join-Path $dir.FullName "${{ steps.getAddonInfo.outputs.addonId }}.xliff"
+            $xliffFile = Join-Path $dir.FullName "$addonId.xliff"
             $targetDocDir = "addon/doc/$langCode"
             $readmePath = "$targetDocDir/readme.md"
 
-            if (Test-Path -PathType Leaf $xliffFile) {
+            # ============================
+            # PO PROCESSING
+            # ============================
+            if (Test-Path -PathType Leaf $poFile) {
 
-              New-Item -ItemType Directory -Force -Path $targetDocDir | Out-Null
+              Write-Host "Running PO translation check..."
 
-              $content = Get-Content $xliffFile -Raw
-              $matches = [regex]::Matches($content, '<note appliesTo="source">line: (\d+)</note>')
+              uv run ./.github/scripts/check_translation.py "$poFile"
+              $isTranslated = ($LASTEXITCODE -eq 0)
 
-              if ($matches.Count -gt 0) {
+              if ($isTranslated) {
 
-                $xliffLine = [int]$matches[$matches.Count - 1].Groups[1].Value
+                Write-Host "PO translated → updating local repo"
 
-                if (Test-Path $readmePath) {
-                  $fileLines = (Get-Content $readmePath).Count
-                } else {
-                  $fileLines = 0
-                }
+                $targetDir = "addon/locale/$langCode/LC_MESSAGES"
+                New-Item -ItemType Directory -Force -Path $targetDir | Out-Null
 
-                Write-Host "XLIFF: $xliffLine | MD: $fileLines"
-
-                if ($xliffLine -eq $fileLines) {
-
-                  Write-Host "OK → updating README for $langCode"
-                  uv run l10nUtil.exe xliff2md $xliffFile $readmePath
-
-                } else {
-                  Write-Host "Mismatch → skip README update for $langCode"
-                }
+                Move-Item -Path $poFile -Destination "$targetDir/nvda.po" -Force
 
               } else {
-                Write-Host "No line metadata found → skipping $langCode"
+
+                Write-Host "PO not translated → skipping local update"
+
+                # Upload back to Crowdin
+                $tempFile = "$env:TEMP/$addonId-$langCode.po"
+                Copy-Item $localPoPath $tempFile -Force
+
+                Write-Host "Uploading unchanged PO back to Crowdin"
+
+                ./l10nUtil.exe uploadTranslationFile $langCode $tempFile -c addon
               }
+            }
+
+            # ============================
+            # XLIFF PROCESSING
+            # ============================
+            $isXliffTranslated = $false
+
+            if (Test-Path -PathType Leaf $xliffFile) {
+
+              Write-Host "Running XLIFF translation check..."
+
+              uv run ./.github/scripts/check_translation.py "$xliffFile"
+              $isXliffTranslated = ($LASTEXITCODE -eq 0)
+
+              if ($isXliffTranslated) {
+
+                Write-Host "XLIFF translated → updating README"
+
+                New-Item -ItemType Directory -Force -Path $targetDocDir | Out-Null
+
+                uv run l10nUtil.exe xliff2md $xliffFile $readmePath
+
+              } else {
+
+                Write-Host "XLIFF not translated → skipping README update"
+              }
+
+              Write-Host "XLIFF translation result: $isXliffTranslated"
             }
           }
 
-          # =========================================================
-          # COMMIT
-          # =========================================================
+          # ============================
+          # COMMIT CHANGES
+          # ============================
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
           git add addon/locale addon/doc
 
-          $diff = git diff --staged --quiet
+          git diff --staged --quiet
+          if ($LASTEXITCODE -ne 0) {
+            git commit -m "Update translations for $addonId"
+            git switch ${{ env.downloadTranslationsBranch }} 2>$null
 
-          if ($LASTEXITCODE -eq 0) {
-            Write-Host "Nothing added to commit."
-          } else {
-            git commit -m "Update translations for ${{ steps.getAddonInfo.outputs.addonId }}"
-            git checkout -b ${{ env.downloadTranslationsBranch }} || git checkout ${{ env.downloadTranslationsBranch }}
+            if ($LASTEXITCODE -ne 0) {
+              git switch -c ${{ env.downloadTranslationsBranch }}
+            }
             git push -f --set-upstream origin ${{ env.downloadTranslationsBranch }}
+          } else {
+            Write-Host "Nothing to commit."
           }
