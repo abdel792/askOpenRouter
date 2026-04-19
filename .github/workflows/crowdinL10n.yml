@@ -115,6 +115,7 @@ jobs:
                   Write-Host "No local PO → nothing to do (first run or new language)"
                 }
               }
+            }
 
             # ============================
             # XLIFF PROCESSING
