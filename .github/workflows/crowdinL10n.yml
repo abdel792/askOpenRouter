@@ -87,7 +87,7 @@ jobs:
 
               Write-Host "Running PO translation check..."
 
-              uv run ./.github/scripts/check_translation.py "$poFile"
+              uv run ./.github/scripts/checkTranslation.py "$poFile"
               $isTranslated = ($LASTEXITCODE -eq 0)
 
               if ($isTranslated) {
@@ -122,7 +122,7 @@ jobs:
 
               Write-Host "Running XLIFF translation check..."
 
-              uv run ./.github/scripts/check_translation.py "$xliffFile"
+              uv run ./.github/scripts/checkTranslation.py "$xliffFile"
               $isXliffTranslated = ($LASTEXITCODE -eq 0)
 
               if ($isXliffTranslated) {
