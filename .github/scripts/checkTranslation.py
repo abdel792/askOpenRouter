@@ -12,7 +12,7 @@ def normalize(s: str) -> str:
 # -----------------------------
 # PO FILE CHECK
 # -----------------------------
-def checkP(path: str) -> float:
+def checkPo(path: str) -> float:
     # Parse PO file using polib
     po = polib.pofile(path)
 
