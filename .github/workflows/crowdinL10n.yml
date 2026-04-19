@@ -101,15 +101,20 @@ jobs:
 
                 Write-Host "PO not translated → skipping local update"
 
-                # Upload back to Crowdin
-                $tempFile = "$env:TEMP/$addonId-$langCode.po"
-                Copy-Item $localPoPath $tempFile -Force
+                if (Test-Path -PathType Leaf $localPoPath) {
 
-                Write-Host "Uploading unchanged PO back to Crowdin"
+                  Write-Host "Local PO exists → uploading to Crowdin"
 
-                ./l10nUtil.exe uploadTranslationFile $langCode $tempFile -c addon
+                  $tempFile = "$env:TEMP/$addonId-$langCode.po"
+                  Copy-Item $localPoPath $tempFile -Force
+
+                  ./l10nUtil.exe uploadTranslationFile $langCode $tempFile -c addon
+
+                } else {
+
+                  Write-Host "No local PO → nothing to do (first run or new language)"
+                }
               }
-            }
 
             # ============================
             # XLIFF PROCESSING
