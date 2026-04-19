@@ -36,14 +36,12 @@ jobs:
         uses: astral-sh/setup-uv@v7
 
       - name: Install dependencies
-        run: uv pip install polib
+        run: uv sync
 
       - name: Get add-on info
         id: getAddonInfo
         shell: pwsh
-        run: |
-          uv sync
-          uv run ./.github/scripts/setOutputs.py
+        run: uv run ./.github/scripts/setOutputs.py
 
       - name: Download l10nUtil
         run: |
