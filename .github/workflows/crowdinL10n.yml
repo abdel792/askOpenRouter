@@ -136,6 +136,8 @@ jobs:
           # =========================================================
           # COMMIT
           # =========================================================
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add addon/locale addon/doc
 
           $diff = git diff --staged --quiet
@@ -144,6 +146,6 @@ jobs:
             Write-Host "Nothing added to commit."
           } else {
             git commit -m "Update translations for ${{ steps.getAddonInfo.outputs.addonId }}"
-            git checkout -b ${{ env.downloadTranslationsBranch }}
+            git checkout -b ${{ env.downloadTranslationsBranch }} || git checkout ${{ env.downloadTranslationsBranch }}
             git push -f --set-upstream origin ${{ env.downloadTranslationsBranch }}
           }
