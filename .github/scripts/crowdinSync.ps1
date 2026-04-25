@@ -223,7 +223,7 @@ git diff --staged --quiet
 if ($LASTEXITCODE -ne 0) {
   git commit -m "Update translations for $addonId from Crowdin"
 
-  $branch = "${{ env.downloadTranslationsBranch }}"
+  $branch = $env:downloadTranslationsBranch
   git switch $branch 2>$null
 
   if ($LASTEXITCODE -ne 0) {
