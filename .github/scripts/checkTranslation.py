@@ -68,11 +68,10 @@ def scoreMd(path: str, expected_lang: str) -> float:
 
 	lang, score = langid.classify(text)
 
-	# Normalize score into positive confidence
-	confidence = 1 / (1 + abs(score))
-
+	# Si la langue est celle attendue, on renvoie un score de 1.0 (Valide)
+	# Sinon, on renvoie 0.0
 	if lang == expected_lang:
-		return confidence
+		return 1.0
 	else:
 		return 0.0
 
