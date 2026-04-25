@@ -223,12 +223,14 @@ git diff --staged --quiet
 if ($LASTEXITCODE -ne 0) {
   git commit -m "Update translations for $addonId from Crowdin"
 
-  git switch ${{ env.downloadTranslationsBranch }} 2>$null
+  $branch = "${{ env.downloadTranslationsBranch }}"
+  git switch $branch 2>$null
+
   if ($LASTEXITCODE -ne 0) {
-    git switch -c ${{ env.downloadTranslationsBranch }}
+    git switch -c $branch
   }
 
-  git push -f --set-upstream origin ${{ env.downloadTranslationsBranch }}
+  git push -f --set-upstream origin $branch
 } else {
   Write-Host "Nothing to commit."
 }
