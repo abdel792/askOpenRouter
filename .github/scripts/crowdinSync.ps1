@@ -4,233 +4,92 @@ $ErrorActionPreference = 'Stop'
 Write-Host "Exporting translations from Crowdin..."
 ./l10nUtil.exe exportTranslations -o _addonL10n -c addon
 
-# Ensure base directories exist (excluding language-specific doc folders)
+# Ensure base directories exist
 New-Item -ItemType Directory -Force -Path addon/locale | Out-Null
 New-Item -ItemType Directory -Force -Path addon/doc | Out-Null
 
-# Retrieve Add-on ID from environment variables
 $addonId = $env:ADDON_ID.Trim()
 if (-not $addonId) {
-    Write-Error "Failed to get addon ID. Ensure buildVars.py and dependencies are present."
+    Write-Error "Failed to get addon ID."
     exit 1
 }
 
 foreach ($dir in Get-ChildItem -Path "_addonL10n/$addonId" -Directory) {
+    $langCode = $dir.Name
+    $langShort = $langCode.Split('_')[0]
 
-  Write-Host "=============================="
-  Write-Host "Processing language: $($dir.Name)"
-  Write-Host "=============================="
+    if ($langCode -eq "en") { continue }
 
-  $langCode = $dir.Name
-  $langShort = $langCode.Split('_')[0]
+    Write-Host "--- Processing: $addonId ($langCode) ---"
 
-  # Paths
-  $poFile = Join-Path $dir.FullName "$addonId.po"
-  $localPoPath = "addon/locale/$langCode/LC_MESSAGES/nvda.po"
+    # Temporary files from Crowdin
+    $remoteMd = Join-Path $dir.FullName "$addonId.md"
+    $remoteXliff = Join-Path $dir.FullName "$addonId.xliff"
+    $remotePo = Join-Path $dir.FullName "$addonId.po"
 
-  $xliffFile = Join-Path $dir.FullName "$addonId.xliff"
-  $remoteMd = Join-Path $dir.FullName "$addonId.md"
+    # Local paths
+    $localMdDir = "addon/doc/$langCode"
+    $localMd = "$localMdDir/readme.md"
+    $localPoPath = "addon/locale/$langCode/LC_MESSAGES/nvda.po"
 
-  $targetDocDir = "addon/doc/$langCode"
-  $localMd = "$targetDocDir/readme.md"
-
-  # ----------------------------
-  # SKIP ENGLISH (source language)
-  # ----------------------------
-  if ($langCode -eq "en") {
-    Write-Host "Skipping English (source language) → no MD/XLIFF processing required"
-    continue
-  }
-
-  # ----------------------------
-  # PO PROCESSING
-  # ----------------------------
-  if (Test-Path $poFile) {
-    Write-Host "Checking PO file..."
-
-    uv run ./.github/scripts/checkTranslation.py "$poFile"
-    $isPoTranslated = ($LASTEXITCODE -eq 0)
-
-    Write-Host "PO translated: $isPoTranslated"
-
-    if ($isPoTranslated) {
-      Write-Host "Updating local PO"
-      New-Item -ItemType Directory -Force -Path (Split-Path $localPoPath) | Out-Null
-      Move-Item $poFile $localPoPath -Force
-    } else {
-      Write-Host "PO not translated"
-      if (Test-Path $localPoPath) {
-        Write-Host "Uploading local PO to Crowdin"
-        ./l10nUtil.exe uploadTranslationFile $langCode "$addonId.po" $localPoPath -c addon
-      } else {
-        Write-Host "No local PO available"
-      }
+    # 1. PO PROCESSING
+    if (Test-Path $remotePo) {
+        uv run python .github/scripts/checkTranslation.py "$addonId.po" $langShort
+        if ($LASTEXITCODE -eq 0) {
+            New-Item -ItemType Directory -Force -Path (Split-Path $localPoPath) | Out-Null
+            Move-Item $remotePo $localPoPath -Force
+        }
     }
-  }
 
-  # ----------------------------
-  # XLIFF PROCESSING
-  # ----------------------------
-  $xliffValid = $false
-  $tempMd = $null
+    # 2. EVALUATION VIA API
+    $scoreMd = 0.0
+    $scoreXliff = 0.0
 
-  if (Test-Path $xliffFile) {
-    Write-Host "Checking XLIFF..."
-
-    uv run ./.github/scripts/checkTranslation.py "$xliffFile"
-    $xliffValid = ($LASTEXITCODE -eq 0)
-
-    Write-Host "XLIFF valid: $xliffValid"
-
-    if ($xliffValid) {
-      Write-Host "Converting XLIFF → MD"
-      $tempMd = "$env:TEMP\readme_$langCode.md"
-      ./l10nUtil.exe xliff2md $xliffFile $tempMd
+    if (Test-Path $remoteMd) {
+        $res = uv run python .github/scripts/checkTranslation.py "$addonId.md" $langShort
+        $scoreMd = [double]($res | Select-String "mdScore=").ToString().Split("=")[1]
     }
-  }
 
-  $remoteExists = Test-Path $remoteMd
-  $localExists = Test-Path $localMd
+    if (Test-Path $remoteXliff) {
+        $res = uv run python .github/scripts/checkTranslation.py "$addonId.xliff" $langShort
+        $scoreXliff = [double]($res | Select-String "translationRatio=").ToString().Split("=")[1]
+    }
 
-  Write-Host "Remote MD exists: $remoteExists"
-  Write-Host "Local MD exists: $localExists"
+    Write-Host "Scores -> MD: $scoreMd | XLIFF: $scoreXliff"
 
-  # ----------------------------
-  # DECISION ENGINE
-  # ----------------------------
+    # 3. DECISION LOGIC
+    $threshold = 0.5
+    $imported = $false
 
-  # CASE: XLIFF VALID
-  if ($xliffValid) {
-    Write-Host "Entering XLIFF-driven logic"
+    if ($scoreXliff -gt $threshold -or $scoreMd -gt $threshold) {
+        # Create doc directory if needed
+        if (!(Test-Path $localMdDir)) { New-Item -ItemType Directory -Force -Path $localMdDir | Out-Null }
 
-    if ($remoteExists -and $localExists) {
-      Write-Host "3-way comparison (xliff, remote, local)"
+        if ($scoreXliff -ge $scoreMd) {
+            Write-Host "Action: Converting XLIFF to local MD"
+            ./l10nUtil.exe xliff2md $remoteXliff $localMd
+            $imported = $true
+        } else {
+            Write-Host "Action: Importing Remote MD to local"
+            Move-Item $remoteMd $localMd -Force
+            $imported = $true
+        }
+    }
 
-      $scoreX = (uv run python .github/scripts/checkTranslation.py "$tempMd" $langShort | Select-String "mdScore=").ToString().Split("=")[1]
-      $scoreR = (uv run python .github/scripts/checkTranslation.py "$remoteMd" $langShort | Select-String "mdScore=").ToString().Split("=")[1]
-      $scoreL = (uv run python .github/scripts/checkTranslation.py "$localMd" $langShort | Select-String "mdScore=").ToString().Split("=")[1]
-
-      $scoreX = [double]$scoreX
-      $scoreR = [double]$scoreR
-      $scoreL = [double]$scoreL
-
-      Write-Host "Scores → XLIFF:$scoreX Remote:$scoreR Local:$scoreL"
-
-      $best = [Math]::Max($scoreX, [Math]::Max($scoreR, $scoreL))
-
-      if ($best -eq $scoreX) {
-        Write-Host "Winner: XLIFF"
-        Move-Item $tempMd $localMd -Force
-      } elseif ($best -eq $scoreR) {
-        Write-Host "Winner: Remote MD"
-        Move-Item $remoteMd $localMd -Force
-      } else {
-        Write-Host "Winner: Local MD → uploading"
+    # 4. FALLBACK: Upload local if remote is poor
+    if (-not $imported -and (Test-Path $localMd)) {
+        Write-Host "Action: Remote quality too low. Uploading local MD to Crowdin..."
         ./l10nUtil.exe uploadTranslationFile $langCode "$addonId.md" $localMd -c addon
-      }
-
-    } elseif ($remoteExists -and -not $localExists) {
-      Write-Host "Comparing XLIFF vs Remote"
-
-      $scoreX = (uv run python .github/scripts/checkTranslation.py "$tempMd" $langShort | Select-String "mdScore=").ToString().Split("=")[1]
-      $scoreR = (uv run python .github/scripts/checkTranslation.py "$remoteMd" $langShort | Select-String "mdScore=").ToString().Split("=")[1]
-
-      $scoreX = [double]$scoreX
-      $scoreR = [double]$scoreR
-
-      if ($scoreX -ge $scoreR) {
-        Write-Host "Winner: XLIFF → creating local"
-        Move-Item $tempMd $localMd -Force
-      } else {
-        Write-Host "Winner: Remote → creating local"
-        Move-Item $remoteMd $localMd -Force
-      }
-
-    } elseif (-not $remoteExists -and $localExists) {
-      Write-Host "Comparing XLIFF vs Local"
-
-      $scoreX = (uv run python .github/scripts/checkTranslation.py "$tempMd" $langShort | Select-String "mdScore=").ToString().Split("=")[1]
-      $scoreL = (uv run python .github/scripts/checkTranslation.py "$localMd" $langShort | Select-String "mdScore=").ToString().Split("=")[1]
-
-      $scoreX = [double]$scoreX
-      $scoreL = [double]$scoreL
-
-      if ($scoreX -gt $scoreL) {
-        Write-Host "Winner: XLIFF → overwrite local"
-        Move-Item $tempMd $localMd -Force
-      } else {
-        Write-Host "Winner: Local → uploading"
-        ./l10nUtil.exe uploadTranslationFile $langCode "$addonId.md" $localMd -c addon
-      }
-
-    } else {
-      Write-Host "Only XLIFF available → importing directly"
-      Move-Item $tempMd $localMd -Force
     }
-
-  } else {
-    Write-Host "XLIFF not usable → fallback logic"
-
-    if ($remoteExists -and $localExists) {
-      Write-Host "Comparing Remote vs Local"
-
-      $scoreR = (uv run python .github/scripts/checkTranslation.py "$remoteMd" $langShort | Select-String "mdScore=").ToString().Split("=")[1]
-      $scoreL = (uv run python .github/scripts/checkTranslation.py "$localMd" $langShort | Select-String "mdScore=").ToString().Split("=")[1]
-
-      $scoreR = [double]$scoreR
-      $scoreL = [double]$scoreL
-
-      if ($scoreR -gt $scoreL) {
-        Write-Host "Winner: Remote → overwrite local"
-        Move-Item $remoteMd $localMd -Force
-      } else {
-        Write-Host "Winner: Local → uploading"
-        ./l10nUtil.exe uploadTranslationFile $langCode "$addonId.md" $localMd -c addon
-      }
-
-    } elseif ($remoteExists -and -not $localExists) {
-      Write-Host "Remote only → checking quality"
-
-      $scoreR = (uv run python .github/scripts/checkTranslation.py "$remoteMd" $langShort | Select-String "mdScore=").ToString().Split("=")[1]
-      $scoreR = [double]$scoreR
-
-      if ($scoreR -gt 0.5) {
-        Write-Host "Remote is valid → importing"
-        Move-Item $remoteMd $localMd -Force
-      } else {
-        Write-Host "Remote not valid → skipping"
-      }
-
-    } elseif (-not $remoteExists -and $localExists) {
-      Write-Host "Only local exists → uploading without scoring"
-      ./l10nUtil.exe uploadTranslationFile $langCode "$addonId.md" $localMd -c addon
-
-    } else {
-      Write-Host "No MD available → nothing to do"
-    }
-  }
 }
 
-# ----------------------------
-# COMMIT
-# ----------------------------
+# --- GIT COMMIT & PUSH ---
 git config user.name "github-actions[bot]"
 git config user.email "github-actions[bot]@users.noreply.github.com"
-
 git add addon/locale addon/doc
-
 git diff --staged --quiet
 if ($LASTEXITCODE -ne 0) {
-  git commit -m "Update translations for $addonId from Crowdin"
-
-  $branch = $env:downloadTranslationsBranch
-  git switch $branch 2>$null
-
-  if ($LASTEXITCODE -ne 0) {
-    git switch -c $branch
-  }
-
-  git push -f --set-upstream origin $branch
-} else {
-  Write-Host "Nothing to commit."
+    git commit -m "Update translations for $addonId from Crowdin"
+    $branch = $env:downloadTranslationsBranch
+    git push -f origin "HEAD:$branch"
 }
