@@ -106,9 +106,9 @@ foreach ($dir in Get-ChildItem -Path "_addonL10n/$addonId" -Directory) {
     if ($remoteExists -and $localExists) {
       Write-Host "3-way comparison (xliff, remote, local)"
 
-      $scoreX = (uv run python .github/scripts/checkTranslation.py "$tempMd" $langShort | Select-String "md_score=").ToString().Split("=")[1]
-      $scoreR = (uv run python .github/scripts/checkTranslation.py "$remoteMd" $langShort | Select-String "md_score=").ToString().Split("=")[1]
-      $scoreL = (uv run python .github/scripts/checkTranslation.py "$localMd" $langShort | Select-String "md_score=").ToString().Split("=")[1]
+      $scoreX = (uv run python .github/scripts/checkTranslation.py "$tempMd" $langShort | Select-String "mdScore=").ToString().Split("=")[1]
+      $scoreR = (uv run python .github/scripts/checkTranslation.py "$remoteMd" $langShort | Select-String "mdScore=").ToString().Split("=")[1]
+      $scoreL = (uv run python .github/scripts/checkTranslation.py "$localMd" $langShort | Select-String "mdScore=").ToString().Split("=")[1]
 
       $scoreX = [double]$scoreX
       $scoreR = [double]$scoreR
@@ -132,8 +132,8 @@ foreach ($dir in Get-ChildItem -Path "_addonL10n/$addonId" -Directory) {
     } elseif ($remoteExists -and -not $localExists) {
       Write-Host "Comparing XLIFF vs Remote"
 
-      $scoreX = (uv run python .github/scripts/checkTranslation.py "$tempMd" $langShort | Select-String "md_score=").ToString().Split("=")[1]
-      $scoreR = (uv run python .github/scripts/checkTranslation.py "$remoteMd" $langShort | Select-String "md_score=").ToString().Split("=")[1]
+      $scoreX = (uv run python .github/scripts/checkTranslation.py "$tempMd" $langShort | Select-String "mdScore=").ToString().Split("=")[1]
+      $scoreR = (uv run python .github/scripts/checkTranslation.py "$remoteMd" $langShort | Select-String "mdScore=").ToString().Split("=")[1]
 
       $scoreX = [double]$scoreX
       $scoreR = [double]$scoreR
@@ -149,8 +149,8 @@ foreach ($dir in Get-ChildItem -Path "_addonL10n/$addonId" -Directory) {
     } elseif (-not $remoteExists -and $localExists) {
       Write-Host "Comparing XLIFF vs Local"
 
-      $scoreX = (uv run python .github/scripts/checkTranslation.py "$tempMd" $langShort | Select-String "md_score=").ToString().Split("=")[1]
-      $scoreL = (uv run python .github/scripts/checkTranslation.py "$localMd" $langShort | Select-String "md_score=").ToString().Split("=")[1]
+      $scoreX = (uv run python .github/scripts/checkTranslation.py "$tempMd" $langShort | Select-String "mdScore=").ToString().Split("=")[1]
+      $scoreL = (uv run python .github/scripts/checkTranslation.py "$localMd" $langShort | Select-String "mdScore=").ToString().Split("=")[1]
 
       $scoreX = [double]$scoreX
       $scoreL = [double]$scoreL
@@ -174,8 +174,8 @@ foreach ($dir in Get-ChildItem -Path "_addonL10n/$addonId" -Directory) {
     if ($remoteExists -and $localExists) {
       Write-Host "Comparing Remote vs Local"
 
-      $scoreR = (uv run python .github/scripts/checkTranslation.py "$remoteMd" $langShort | Select-String "md_score=").ToString().Split("=")[1]
-      $scoreL = (uv run python .github/scripts/checkTranslation.py "$localMd" $langShort | Select-String "md_score=").ToString().Split("=")[1]
+      $scoreR = (uv run python .github/scripts/checkTranslation.py "$remoteMd" $langShort | Select-String "mdScore=").ToString().Split("=")[1]
+      $scoreL = (uv run python .github/scripts/checkTranslation.py "$localMd" $langShort | Select-String "mdScore=").ToString().Split("=")[1]
 
       $scoreR = [double]$scoreR
       $scoreL = [double]$scoreL
@@ -191,7 +191,7 @@ foreach ($dir in Get-ChildItem -Path "_addonL10n/$addonId" -Directory) {
     } elseif ($remoteExists -and -not $localExists) {
       Write-Host "Remote only → checking quality"
 
-      $scoreR = (uv run python .github/scripts/checkTranslation.py "$remoteMd" $langShort | Select-String "md_score=").ToString().Split("=")[1]
+      $scoreR = (uv run python .github/scripts/checkTranslation.py "$remoteMd" $langShort | Select-String "mdScore=").ToString().Split("=")[1]
       $scoreR = [double]$scoreR
 
       if ($scoreR -gt 0.5) {
