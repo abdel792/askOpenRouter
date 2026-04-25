@@ -160,9 +160,11 @@ jobs:
 
                 if ($best -eq $scoreX) {
                   Write-Host "Winner: XLIFF"
+                  New-Item -ItemType Directory -Force -Path $targetDocDir | Out-Null
                   Move-Item $tempMd $localMd -Force
                 } elseif ($best -eq $scoreR) {
                   Write-Host "Winner: Remote MD"
+                  New-Item -ItemType Directory -Force -Path $targetDocDir | Out-Null
                   Move-Item $remoteMd $localMd -Force
                 } else {
                   Write-Host "Winner: Local MD → uploading"
@@ -180,9 +182,11 @@ jobs:
 
                 if ($scoreX -ge $scoreR) {
                   Write-Host "Winner: XLIFF → creating local"
+                  New-Item -ItemType Directory -Force -Path $targetDocDir | Out-Null
                   Move-Item $tempMd $localMd -Force
                 } else {
                   Write-Host "Winner: Remote → creating local"
+                  New-Item -ItemType Directory -Force -Path $targetDocDir | Out-Null
                   Move-Item $remoteMd $localMd -Force
                 }
 
@@ -197,6 +201,7 @@ jobs:
 
                 if ($scoreX -gt $scoreL) {
                   Write-Host "Winner: XLIFF → overwrite local"
+                  New-Item -ItemType Directory -Force -Path $targetDocDir | Out-Null
                   Move-Item $tempMd $localMd -Force
                 } else {
                   Write-Host "Winner: Local → uploading"
@@ -205,6 +210,7 @@ jobs:
 
               } else {
                 Write-Host "Only XLIFF available → importing directly"
+                New-Item -ItemType Directory -Force -Path $targetDocDir | Out-Null
                 Move-Item $tempMd $localMd -Force
               }
 
@@ -236,6 +242,7 @@ jobs:
 
                 if ($scoreR -gt 0.5) {
                   Write-Host "Remote is valid → importing"
+                  New-Item -ItemType Directory -Force -Path $targetDocDir | Out-Null
                   Move-Item $remoteMd $localMd -Force
                 } else {
                   Write-Host "Remote not valid → skipping"
