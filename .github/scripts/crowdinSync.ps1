@@ -1,6 +1,55 @@
 #!/usr/bin/env pwsh
 $ErrorActionPreference = 'Stop'
 
+# Config git
+git config user.name "github-actions[bot]"
+git config user.email "github-actions[bot]@users.noreply.github.com"
+
+# Update xliff file
+$xliffFile = "./$addonId.xliff"
+$mdFile = "./readme.md"
+if (Test-Path $mdFile) {
+    if (Test-Path $xliffFile) {
+        $tempXliff = [System.IO.Path]::GetTempFileName()
+        Copy-Item "$addonId.xliff" $tempXliff -Force
+        Write-Host "Copied $addonId.xliff to temporary file: $tempXliff"
+        uv run .github/scripts/markdownTranslate.py updateXliff -m $mdFile -x $tempXliff -o $xliffFile
+        Write-Host "Updated $xliffFile based on $mdFile"
+    } else {
+        Write-Host "XLIFF file not found, but readme.md exists. Creating an XLIFF template for translations."
+        uv run .github/scripts/markdownTranslate.py generateXliff -m $mdFile -o $xliffFile
+    }
+} else {
+    Write-Host "readme.md not found. Skipping XLIFF generation."
+}
+
+# Update pot file in Crowdin
+uv run scons pot
+$potFile = "$addonId.pot"
+if (Test-Path $potFile) {
+    Write-Host "Uploading updated POT to Crowdin..."
+    ./l10nUtil.exe uploadSourceFile "$potFile" -c addon
+} else {
+    Write-Host "POT file not found, skipping POT update."
+}
+
+# Update xliff file in Crowdin
+if (Test-Path $xliffFile) {
+    Write-Host "Uploading XLIFF to Crowdin..."
+    ./l10nUtil.exe uploadSourceFile "$xliffFile" -c addon
+    git add "$xliffFile"
+    git diff --staged --quiet
+    if ($LASTEXITCODE -ne 0) {
+        git commit -m "Update $xliffFile for $addonId"
+        git push
+      } else {
+        Write-Host "No changes to $xliffFile, skipping commit."
+    }
+} else {
+    Write-Host "XLIFF file not found, skipping XLIFF upload."
+}
+
+# Export translations
 Write-Host "Exporting translations from Crowdin..."
 ./l10nUtil.exe exportTranslations -o _addonL10n -c addon
 
@@ -83,9 +132,6 @@ foreach ($dir in Get-ChildItem -Path "_addonL10n/$addonId" -Directory) {
     }
 }
 
-# --- GIT COMMIT & PUSH ---
-git config user.name "github-actions[bot]"
-git config user.email "github-actions[bot]@users.noreply.github.com"
 git add addon/locale addon/doc
 git diff --staged --quiet
 if ($LASTEXITCODE -ne 0) {
