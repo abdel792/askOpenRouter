@@ -46,7 +46,7 @@ Dans le panneau des paramètres de NVDA, juste après le champ "OpenRouter API K
 
 "Afficher la clé API"
 
-Si elle est cochée, les caractères de la clé API deviennent visibles.  
+Si elle est cochée, les caractères de la clé API deviennent visibles.
 Par défaut, ils sont masqués pour des raisons de sécurité.
 
 ## Paramètres de sélection du modèle
@@ -138,7 +138,7 @@ Si vous préférez n'afficher que la dernière réponse au lieu de l'historique 
 
 ## Scripts non assignés
 
-Les scripts suivants n'ont pas de raccourcis assignés.  
+Les scripts suivants n'ont pas de raccourcis assignés.
 Vous pouvez les définir dans :
 
 Préférences → Gestes de commandes → Ask OpenRouter

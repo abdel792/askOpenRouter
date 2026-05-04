@@ -64,19 +64,19 @@ $languageMappings = Get-Content -Raw ".github/scripts/languageMappings.json" | C
 
 foreach ($dir in Get-ChildItem -Path "_addonL10n/$addonId" -Directory) {
     $langCode = $dir.Name # e.g., "ar-SA", "es-ES", "fr"
-    
+
     if ($langCode -eq "en") { continue }
 
     # 1. Identify the Crowdin code for API calls (using nvdaes' logic)
     $crowdinLang = $languageMappings[$langCode]
     if (-not $crowdinLang) { $crowdinLang = $langCode }
-    
+
     # 2. Extract langShort for checkTranslation.py (e.g., "es-ES" -> "es")
     $langShort = $langCode.Split('-')[0].Split('_')[0]
 
     # 3. Get the correct LOCAL NVDA directory name (e.g., "ar-SA" -> "ar_SA")
     $localLangDir = uv run python .github/scripts/langCodes.py $langCode
-    
+
     Write-Host "--- Processing Language: $langCode (Mapped to local: $localLangDir | API code: $langShort) ---"
 
     # Remote paths (from Crowdin export)
