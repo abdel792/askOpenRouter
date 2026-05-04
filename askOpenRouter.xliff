@@ -1,0 +1,1321 @@
+<?xml version="1.0"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en">
+<file id="readme.md" original="https://raw.githubusercontent.com/abdel792/askOpenRouter/77f0195882ec6be4d64e1169074a19ffb454c3d6/readme.md">
+<skeleton>
+# $(ID:a3c954d8-c424-480a-af5d-dc2dd5fada80)
+
+* $(ID:258f1957-d6a1-444d-8941-65e28cc607a0)
+
+$(ID:90e23775-2ca4-4214-b802-d8484a01bc0f)
+
+$(ID:6fbcd087-293e-4165-8ae8-03aa7c6928ac)
+* $(ID:47a3785a-05fb-4670-9aeb-ad0521bec60b)
+* $(ID:c63b62b2-2b66-4ce8-a3cc-d1b3720f3ae0)
+
+## $(ID:5b41264b-033f-4404-bdce-19e158a280e9)
+
+* $(ID:b9bf658b-4659-43ce-b035-23f0a0afca90)
+* $(ID:0df086c3-0a9c-4e2c-804a-b54fe75ca9f7)
+* $(ID:8e412176-b650-46c7-8628-24ed6e5ceb5f)
+* $(ID:aad76cba-9d84-4687-bc92-fe6bac9b2926)
+* $(ID:5acc5bbf-9fff-4ef9-a404-e96d05b9eb2e)
+
+## $(ID:73d17a7c-86af-4d1f-b0d9-7ded7e522ddb)
+
+$(ID:ed60b698-1ba0-4793-b646-93a7490cf735)
+
+$(ID:a682bc2d-7306-4d59-8929-e9e1945fd519)
+
+### $(ID:8714d16e-2f56-40d9-8942-f9b190909352)
+
+1. $(ID:6ff1315a-ee1c-4d9f-87d9-edb6d0a57195)
+2. $(ID:8903f3d3-80a7-438c-a8e5-62f8c47cd9b2)
+3. $(ID:630e66b2-b7f0-4777-9560-c00cb8ca2e21)
+4. $(ID:c2a266e9-6894-4ca9-84bd-dd7cf26abd33)
+5. $(ID:d5861f44-7aa2-48ad-a3aa-04d2a399157a)
+6. $(ID:5f30e3d7-20be-4778-a552-b36d1c3760cf)
+
+### $(ID:409c233d-dd3a-4df0-8793-bf703acf6f14)
+
+1. $(ID:64adbe62-995b-4943-8a72-53b4baa2f24e)
+2. $(ID:6c1bcd63-1a26-450e-822c-2a3ea1d3b521)
+3. $(ID:5f88b52b-bea3-4b76-876f-0cb6fa57afdb)
+4. $(ID:43f6902a-cb46-41bf-9d90-495c45e0047e)
+5. $(ID:1674420f-ec70-43ce-a34a-3a838ec5d512)
+
+#### $(ID:e07eec86-0f2a-420e-b60a-e623476865c1)
+
+$(ID:a9f02e60-74b9-4b20-bfea-da309c084e95)
+
+$(ID:c0f8466a-003b-4497-9b2f-1cb19a48882c)
+
+$(ID:f3ff0d17-6d01-42ab-ad28-f55507a2c2d0)
+$(ID:d20b9570-27e3-413e-9b69-990be3e116fe)
+
+## $(ID:eac2b838-95de-4b2f-ba4e-fc654e283f3f)
+
+$(ID:bdafc0c2-1987-4c85-890e-e71d6d24855a)
+
+### $(ID:84d08760-8a1f-4585-b7f5-50a2623437a8)
+
+$(ID:2fe8f318-049e-48bb-a6c4-0c6f25c935e3)
+
+### $(ID:7cdefbab-d87b-40f2-b0da-f164a1b4117d)
+
+* $(ID:d33dc03b-f741-4770-92eb-11f59368678c)
+* $(ID:9ab4d987-c406-4d7a-903a-b1fa87a336cb)
+* $(ID:238a3638-186a-4d8f-8466-c579bba50c83)
+
+### $(ID:dc9a871a-6b58-4f2b-aa25-173441e12ca9)
+
+$(ID:e7b59716-c882-4fdf-a2f1-2f70ff857106)
+
+* $(ID:69aeb4f2-b2de-47cc-9850-7ad1fa08b833)
+* $(ID:9f9018ba-b972-4c5c-9ff8-5ff1b7cac384)
+
+### $(ID:dc791543-f129-49e8-9572-04a36d37a17d)
+
+* $(ID:0ef05b0e-48fc-459e-97cf-cc182ab5d906)
+* $(ID:ad9c0a06-dd3f-4aab-a236-bb511f45b0b3)
+* $(ID:d852c22a-539b-468a-9994-7f3880c5a24f)
+* $(ID:4c213676-e209-43c8-8464-90cb26f47f6a)
+
+### $(ID:7fee3b9e-4c49-4273-aac0-203abe841e09)
+
+$(ID:722cfa24-d59e-492d-a7aa-4b5192e186fd)
+
+$(ID:8b5a2cf0-9d0a-47c7-ad93-f81dd6da4589)
+* $(ID:53fa5fa8-1b11-4fce-99a5-6f82e3093570)
+* $(ID:911201d8-2fb2-4425-8c0f-d21bb196144a)
+
+## $(ID:1358f12e-9d85-405c-ac6f-1460e7f600bd)
+
+### $(ID:cde6210b-559d-45e4-90ce-a0d491a53afa)
+
+$(ID:ae554a25-00a4-4f66-9c4b-4505d1a84c05)
+
+$(ID:f75c5621-d804-427b-bc42-daea89114f7f)
+
+$(ID:6e954606-7b4c-4320-b622-28fba6fc5537)
+$(ID:6f6707a1-1e76-46b5-a348-d5e57bebcf84)
+
+### $(ID:b2a1aac8-680a-49ff-b2bd-5e34eb7a6188)
+
+$(ID:ef1fa93a-54fd-42a5-952b-4e52b93a1f28)
+
+1. $(ID:5a101451-9f62-4889-956d-34e1aed2a794)
+2. $(ID:899c927c-a788-473b-a434-e6927957054a)
+3. $(ID:ebd52435-4f48-475e-821a-f2b9a7bd448b)
+
+### $(ID:f424e7df-3f6f-45d8-a499-3ed0b8e0abde)
+
+$(ID:c59e3113-078e-4361-8f20-d33d64d0ed72)
+
+* $(ID:696ee838-87c1-4aa3-bc10-9b02d2027bf4)
+* $(ID:c0b17322-fe70-494a-8648-bf47d15d3b5c)
+* $(ID:539207c5-9f7f-4c22-be10-97158739d9f9)
+$(ID:529b72a4-2430-4bc0-a683-312361860951)
+$(ID:1ebff1ad-dc59-4a28-bd41-a6f1bbc47a2f)
+
+### $(ID:a0ba565d-0f35-4d95-b449-5017419a8317)
+
+$(ID:72def7d7-c9cb-46c6-935b-a1d0e884d6d1)
+
+* $(ID:2a75fd18-13a6-447c-930b-b84c39e72875)
+* $(ID:f747c1b2-f080-4b3c-80dc-e940735819b3)
+* $(ID:e7118cdc-a6da-4310-b76b-43b5a2fa117b)
+
+$(ID:dc80b21d-2325-4149-81f0-9cf16ecfc45b)
+
+## $(ID:718d49ea-367c-4ac6-aad0-442fe031b63b)
+
+$(ID:d8742bc6-16a2-4e2e-b497-42f2e3ef7e18)
+
+1. $(ID:f0a54fbd-cd36-4e2a-8ca0-2afb0170e3dd)
+2. $(ID:940be1aa-52e4-4485-b366-c4bfc6aee7b0)
+3. $(ID:fb47e112-386f-4d9b-a926-88efd8b583f3)
+4. $(ID:4df257d7-5e97-4aba-91bc-512e1a07dd97)
+$(ID:9b610e33-f4a3-44ce-be51-a7defaf8451d)
+5. $(ID:edb3f9e0-25bc-40b7-9af4-b54fb4bfc164)
+
+## $(ID:a38cbc4d-3dca-4af9-9f7c-8f71b3a4f96b)
+
+$(ID:db71b444-5c90-4b60-af9d-db6505c25341)
+$(ID:d760f259-113e-40a6-b31f-322989c0b2f6)
+
+$(ID:79750b7a-2690-4f8d-8f72-d3048e714cee)
+
+$(ID:33532aeb-528e-410f-a173-2ecfe2e1776d)
+
+* $(ID:eddb9f5d-e1f4-429c-8917-60f70bd13b80)
+* $(ID:37c37842-b26c-44f7-9275-cacf365f0452)
+* $(ID:fbc5a422-aba6-4fc3-8c3d-9aac86adf45e)
+
+## $(ID:2b177e23-ab00-4216-b78c-99d30634b543)
+
+### $(ID:cb7d1216-dbcc-43e1-9c5c-a4975a2a2fe7)
+
+$(ID:6f4dfbb6-0b1e-44d2-baab-88adff7ddfff)
+
+* $(ID:bfe2042b-1f4b-48a6-8a2a-3e6dc1b8aef3)
+* $(ID:04e7fce7-8a40-4a55-b146-80d8b9e212a2)
+$(ID:9549f580-6f62-4345-98f1-52b9f3a0cd7a)
+$(ID:718e8ce9-7731-426e-b811-ee9d49e3542b)
+$(ID:07e900dc-a526-41b7-b461-7d9a8f2f62cd)
+
+$(ID:d3089c13-2393-4455-bd7f-288d2d88df8c)
+
+### $(ID:71735492-8458-4df6-9118-becbd01c44df)
+
+$(ID:6c7e4f95-9f84-4e49-9ab2-cc5f5fc59e2e)
+
+* $(ID:d7d2df10-ad26-452b-bfeb-2e2f95c7202f)
+* $(ID:7997a458-1e93-45b0-8f51-cf5a06a5ccbc)
+* $(ID:5a20b298-a58e-4836-bb94-242d82300750)
+* $(ID:762a48b6-81d0-4974-b95f-7283249228bb)
+
+$(ID:26d3b9ba-50cc-4d8b-a375-f1b036409364)
+* $(ID:801fa76b-003b-4869-bd4d-0e42cc060afc)
+* $(ID:29116e32-835e-49a2-a6e8-57c8c7050604)
+* $(ID:44f9c60f-904c-42b8-8b6f-00d6de869e67)
+
+$(ID:2c7b20c1-e1ae-4f1b-a8fa-58c3e99f5094)
+
+## $(ID:9be98821-4026-42e7-95a2-e1b7617fd036)
+
+$(ID:0e61a993-e0dd-4a0d-a74d-197d702857f4)
+
+$(ID:95b3e62b-4074-4d38-835b-dc155168e8af)
+
+$(ID:b4f9c918-4b03-4c89-a9fd-0858f4f7b62c)
+
+$(ID:04ac91ed-88ff-4099-b513-92abd87b039e)
+
+$(ID:b8c7c9f6-d2bf-4900-a1bc-78c6bc210350)
+
+## $(ID:62f8fb94-260f-4b49-a396-723d3bb946ed)
+
+* $(ID:2bcaede0-58cc-4216-901e-c245c15cd531)
+
+## $(ID:196018c0-a2e5-45d1-9ed3-2d1aa55d9499)
+
+* $(ID:d2b07ad4-06f2-46c8-9aba-cb735be9021b)
+* $(ID:b6627f9d-5fc4-4d55-b07b-a157e8e4547e)
+
+## $(ID:12a86fd1-5ab4-472b-a11c-31486c6784c9)
+
+* $(ID:31405a74-4a74-40e1-914d-703202bb177e)
+
+</skeleton>
+<unit id="a3c954d8-c424-480a-af5d-dc2dd5fada80">
+<notes>
+<note appliesTo="source">line: 2</note>
+<note appliesTo="source">prefix: # </note>
+</notes>
+<segment>
+<source>Ask OpenRouter</source>
+</segment>
+</unit>
+<unit id="258f1957-d6a1-444d-8941-65e28cc607a0">
+<notes>
+<note appliesTo="source">line: 4</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Author(s) : Abdel.</source>
+</segment>
+</unit>
+<unit id="90e23775-2ca4-4214-b802-d8484a01bc0f">
+<notes>
+<note appliesTo="source">line: 6</note>
+</notes>
+<segment>
+<source>This NVDA add-on allows you to interact with Artificial Intelligence models provided by the OpenRouter platform directly from your screen reader.</source>
+</segment>
+</unit>
+<unit id="6fbcd087-293e-4165-8ae8-03aa7c6928ac">
+<notes>
+<note appliesTo="source">line: 8</note>
+</notes>
+<segment>
+<source>The add-on supports both:</source>
+</segment>
+</unit>
+<unit id="47a3785a-05fb-4670-9aeb-ad0521bec60b">
+<notes>
+<note appliesTo="source">line: 9</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Automatic random selection of free models</source>
+</segment>
+</unit>
+<unit id="c63b62b2-2b66-4ce8-a3cc-d1b3720f3ae0">
+<notes>
+<note appliesTo="source">line: 10</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Manual selection of any available model (including paid ones)</source>
+</segment>
+</unit>
+<unit id="5b41264b-033f-4404-bdce-19e158a280e9">
+<notes>
+<note appliesTo="source">line: 12</note>
+<note appliesTo="source">prefix: ## </note>
+</notes>
+<segment>
+<source>Key Features</source>
+</segment>
+</unit>
+<unit id="b9bf658b-4659-43ce-b035-23f0a0afca90">
+<notes>
+<note appliesTo="source">line: 14</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Quick Access: Open the chat interface anytime with a global shortcut.</source>
+</segment>
+</unit>
+<unit id="0df086c3-0a9c-4e2c-804a-b54fe75ca9f7">
+<notes>
+<note appliesTo="source">line: 15</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Conversation Management: Start a fresh conversation or continue your previous exchange.</source>
+</segment>
+</unit>
+<unit id="8e412176-b650-46c7-8628-24ed6e5ceb5f">
+<notes>
+<note appliesTo="source">line: 16</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Smart Free Model Rotation: Automatically selects a random free model to optimize daily usage quotas.</source>
+</segment>
+</unit>
+<unit id="aad76cba-9d84-4687-bc92-fe6bac9b2926">
+<notes>
+<note appliesTo="source">line: 17</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Manual Model Selection: Choose a specific model (including paid models) from the settings panel.</source>
+</segment>
+</unit>
+<unit id="5acc5bbf-9fff-4ef9-a404-e96d05b9eb2e">
+<notes>
+<note appliesTo="source">line: 18</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Accessible Results: View responses in a clear, easy-to-navigate window with optional full history display.</source>
+</segment>
+</unit>
+<unit id="73d17a7c-86af-4d1f-b0d9-7ded7e522ddb">
+<notes>
+<note appliesTo="source">line: 20</note>
+<note appliesTo="source">prefix: ## </note>
+</notes>
+<segment>
+<source>Configuration: Obtaining and Installing Your API Key</source>
+</segment>
+</unit>
+<unit id="ed60b698-1ba0-4793-b646-93a7490cf735">
+<notes>
+<note appliesTo="source">line: 22</note>
+</notes>
+<segment>
+<source>To use this add-on, you must have an API key from OpenRouter.</source>
+</segment>
+</unit>
+<unit id="a682bc2d-7306-4d59-8929-e9e1945fd519">
+<notes>
+<note appliesTo="source">line: 24</note>
+</notes>
+<segment>
+<source>Even when using free models, the key is required to identify your requests.</source>
+</segment>
+</unit>
+<unit id="8714d16e-2f56-40d9-8942-f9b190909352">
+<notes>
+<note appliesTo="source">line: 26</note>
+<note appliesTo="source">prefix: ### </note>
+</notes>
+<segment>
+<source>1. How to get an API key</source>
+</segment>
+</unit>
+<unit id="6ff1315a-ee1c-4d9f-87d9-edb6d0a57195">
+<notes>
+<note appliesTo="source">line: 28</note>
+<note appliesTo="source">prefix: 1. </note>
+</notes>
+<segment>
+<source>Go to [OpenRouter.ai](https://openrouter.ai/).</source>
+</segment>
+</unit>
+<unit id="8903f3d3-80a7-438c-a8e5-62f8c47cd9b2">
+<notes>
+<note appliesTo="source">line: 29</note>
+<note appliesTo="source">prefix: 2. </note>
+</notes>
+<segment>
+<source>Create an account by clicking "Sign up" (you can sign in with a GitHub, Google or MetaMask account, or your email address).</source>
+</segment>
+</unit>
+<unit id="630e66b2-b7f0-4777-9560-c00cb8ca2e21">
+<notes>
+<note appliesTo="source">line: 30</note>
+<note appliesTo="source">prefix: 3. </note>
+</notes>
+<segment>
+<source>Once logged in, navigate to the "Keys" section in your dashboard, or go directly to: https://openrouter.ai/keys</source>
+</segment>
+</unit>
+<unit id="c2a266e9-6894-4ca9-84bd-dd7cf26abd33">
+<notes>
+<note appliesTo="source">line: 31</note>
+<note appliesTo="source">prefix: 4. </note>
+</notes>
+<segment>
+<source>Click the "Create Key" button.</source>
+</segment>
+</unit>
+<unit id="d5861f44-7aa2-48ad-a3aa-04d2a399157a">
+<notes>
+<note appliesTo="source">line: 32</note>
+<note appliesTo="source">prefix: 5. </note>
+</notes>
+<segment>
+<source>Give your key a name (for example: "My OpenRouter API key") and click "Create".</source>
+</segment>
+</unit>
+<unit id="5f30e3d7-20be-4778-a552-b36d1c3760cf">
+<notes>
+<note appliesTo="source">line: 33</note>
+<note appliesTo="source">prefix: 6. </note>
+</notes>
+<segment>
+<source>Important: Your key will be displayed only once. Copy it immediately and store it in a secure place.</source>
+</segment>
+</unit>
+<unit id="409c233d-dd3a-4df0-8793-bf703acf6f14">
+<notes>
+<note appliesTo="source">line: 35</note>
+<note appliesTo="source">prefix: ### </note>
+</notes>
+<segment>
+<source>2. Setting up the key in NVDA</source>
+</segment>
+</unit>
+<unit id="64adbe62-995b-4943-8a72-53b4baa2f24e">
+<notes>
+<note appliesTo="source">line: 37</note>
+<note appliesTo="source">prefix: 1. </note>
+</notes>
+<segment>
+<source>Open the NVDA menu (NVDA + N).</source>
+</segment>
+</unit>
+<unit id="6c1bcd63-1a26-450e-822c-2a3ea1d3b521">
+<notes>
+<note appliesTo="source">line: 38</note>
+<note appliesTo="source">prefix: 2. </note>
+</notes>
+<segment>
+<source>Navigate to Preferences, then Settings.</source>
+</segment>
+</unit>
+<unit id="5f88b52b-bea3-4b76-876f-0cb6fa57afdb">
+<notes>
+<note appliesTo="source">line: 39</note>
+<note appliesTo="source">prefix: 3. </note>
+</notes>
+<segment>
+<source>In the categories list, select "Ask OpenRouter".</source>
+</segment>
+</unit>
+<unit id="43f6902a-cb46-41bf-9d90-495c45e0047e">
+<notes>
+<note appliesTo="source">line: 40</note>
+<note appliesTo="source">prefix: 4. </note>
+</notes>
+<segment>
+<source>Paste your API key into the "OpenRouter API Key" field.</source>
+</segment>
+</unit>
+<unit id="1674420f-ec70-43ce-a34a-3a838ec5d512">
+<notes>
+<note appliesTo="source">line: 41</note>
+<note appliesTo="source">prefix: 5. </note>
+</notes>
+<segment>
+<source>Press OK to save.</source>
+</segment>
+</unit>
+<unit id="e07eec86-0f2a-420e-b60a-e623476865c1">
+<notes>
+<note appliesTo="source">line: 43</note>
+<note appliesTo="source">prefix: #### </note>
+</notes>
+<segment>
+<source>Show API Key</source>
+</segment>
+</unit>
+<unit id="a9f02e60-74b9-4b20-bfea-da309c084e95">
+<notes>
+<note appliesTo="source">line: 45</note>
+</notes>
+<segment>
+<source>In the NVDA settings panel, just after the "OpenRouter API Key" field, there is a checkbox labeled:</source>
+</segment>
+</unit>
+<unit id="c0f8466a-003b-4497-9b2f-1cb19a48882c">
+<notes>
+<note appliesTo="source">line: 47</note>
+</notes>
+<segment>
+<source>"Show API key"</source>
+</segment>
+</unit>
+<unit id="f3ff0d17-6d01-42ab-ad28-f55507a2c2d0">
+<notes>
+<note appliesTo="source">line: 49</note>
+</notes>
+<segment>
+<source>If checked, the characters of the API key become visible.</source>
+</segment>
+</unit>
+<unit id="d20b9570-27e3-413e-9b69-990be3e116fe">
+<notes>
+<note appliesTo="source">line: 50</note>
+</notes>
+<segment>
+<source>By default, they are hidden for security reasons.</source>
+</segment>
+</unit>
+<unit id="eac2b838-95de-4b2f-ba4e-fc654e283f3f">
+<notes>
+<note appliesTo="source">line: 52</note>
+<note appliesTo="source">prefix: ## </note>
+</notes>
+<segment>
+<source>Model Selection Settings</source>
+</segment>
+</unit>
+<unit id="bdafc0c2-1987-4c85-890e-e71d6d24855a">
+<notes>
+<note appliesTo="source">line: 54</note>
+</notes>
+<segment>
+<source>In the Ask OpenRouter settings category, you will find a new option:</source>
+</segment>
+</unit>
+<unit id="84d08760-8a1f-4585-b7f5-50a2623437a8">
+<notes>
+<note appliesTo="source">line: 56</note>
+<note appliesTo="source">prefix: ### </note>
+</notes>
+<segment>
+<source>"Use all models, including paid ones"</source>
+</segment>
+</unit>
+<unit id="2fe8f318-049e-48bb-a6c4-0c6f25c935e3">
+<notes>
+<note appliesTo="source">line: 58</note>
+</notes>
+<segment>
+<source>This option controls how models are selected.</source>
+</segment>
+</unit>
+<unit id="7cdefbab-d87b-40f2-b0da-f164a1b4117d">
+<notes>
+<note appliesTo="source">line: 60</note>
+<note appliesTo="source">prefix: ### </note>
+</notes>
+<segment>
+<source>When the option is UNCHECKED (default behavior)</source>
+</segment>
+</unit>
+<unit id="d33dc03b-f741-4770-92eb-11f59368678c">
+<notes>
+<note appliesTo="source">line: 62</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>The add-on automatically selects a random free model for each new conversation.</source>
+</segment>
+</unit>
+<unit id="9ab4d987-c406-4d7a-903a-b1fa87a336cb">
+<notes>
+<note appliesTo="source">line: 63</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>It rotates between available free models.</source>
+</segment>
+</unit>
+<unit id="238a3638-186a-4d8f-8466-c579bba50c83">
+<notes>
+<note appliesTo="source">line: 64</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>This helps distribute usage and avoid rate limits.</source>
+</segment>
+</unit>
+<unit id="dc9a871a-6b58-4f2b-aa25-173441e12ca9">
+<notes>
+<note appliesTo="source">line: 66</note>
+<note appliesTo="source">prefix: ### </note>
+</notes>
+<segment>
+<source>When the option is CHECKED</source>
+</segment>
+</unit>
+<unit id="e7b59716-c882-4fdf-a2f1-2f70ff857106">
+<notes>
+<note appliesTo="source">line: 68</note>
+</notes>
+<segment>
+<source>When this option is enabled, a list of available models automatically appears after the checkbox.</source>
+</segment>
+</unit>
+<unit id="69aeb4f2-b2de-47cc-9850-7ad1fa08b833">
+<notes>
+<note appliesTo="source">line: 70</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>The list is sorted in ascending order based on prompt token pricing (cost per input token), from lowest to highest.</source>
+</segment>
+</unit>
+<unit id="9f9018ba-b972-4c5c-9ff8-5ff1b7cac384">
+<notes>
+<note appliesTo="source">line: 71</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Only non-deprecated models with valid providers are displayed.</source>
+</segment>
+</unit>
+<unit id="dc791543-f129-49e8-9572-04a36d37a17d">
+<notes>
+<note appliesTo="source">line: 73</note>
+<note appliesTo="source">prefix: ### </note>
+</notes>
+<segment>
+<source>What can you do when this option is enabled?</source>
+</segment>
+</unit>
+<unit id="0ef05b0e-48fc-459e-97cf-cc182ab5d906">
+<notes>
+<note appliesTo="source">line: 75</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Choose any available model.</source>
+</segment>
+</unit>
+<unit id="ad9c0a06-dd3f-4aab-a236-bb511f45b0b3">
+<notes>
+<note appliesTo="source">line: 76</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Use paid models (if you have sufficient OpenRouter credits).</source>
+</segment>
+</unit>
+<unit id="d852c22a-539b-468a-9994-7f3880c5a24f">
+<notes>
+<note appliesTo="source">line: 77</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Select the model that best fits your needs.</source>
+</segment>
+</unit>
+<unit id="4c213676-e209-43c8-8464-90cb26f47f6a">
+<notes>
+<note appliesTo="source">line: 78</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Keep using the same selected model for your conversations (no automatic rotation).</source>
+</segment>
+</unit>
+<unit id="7fee3b9e-4c49-4273-aac0-203abe841e09">
+<notes>
+<note appliesTo="source">line: 80</note>
+<note appliesTo="source">prefix: ### </note>
+</notes>
+<segment>
+<source>What is a prompt token?</source>
+</segment>
+</unit>
+<unit id="722cfa24-d59e-492d-a7aa-4b5192e186fd">
+<notes>
+<note appliesTo="source">line: 82</note>
+</notes>
+<segment>
+<source>A prompt token represents a small unit of text sent to the model (your question or input).</source>
+</segment>
+</unit>
+<unit id="8b5a2cf0-9d0a-47c7-ad93-f81dd6da4589">
+<notes>
+<note appliesTo="source">line: 84</note>
+</notes>
+<segment>
+<source>Models are usually billed separately for:</source>
+</segment>
+</unit>
+<unit id="53fa5fa8-1b11-4fce-99a5-6f82e3093570">
+<notes>
+<note appliesTo="source">line: 85</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Input tokens (prompt)</source>
+</segment>
+</unit>
+<unit id="911201d8-2fb2-4425-8c0f-d21bb196144a">
+<notes>
+<note appliesTo="source">line: 86</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Output tokens (completion)</source>
+</segment>
+</unit>
+<unit id="1358f12e-9d85-405c-ac6f-1460e7f600bd">
+<notes>
+<note appliesTo="source">line: 88</note>
+<note appliesTo="source">prefix: ## </note>
+</notes>
+<segment>
+<source>How to Use</source>
+</segment>
+</unit>
+<unit id="cde6210b-559d-45e4-90ce-a0d491a53afa">
+<notes>
+<note appliesTo="source">line: 90</note>
+<note appliesTo="source">prefix: ### </note>
+</notes>
+<segment>
+<source>Opening the Chat Dialog</source>
+</segment>
+</unit>
+<unit id="ae554a25-00a4-4f66-9c4b-4505d1a84c05">
+<notes>
+<note appliesTo="source">line: 92</note>
+</notes>
+<segment>
+<source>Press:</source>
+</segment>
+</unit>
+<unit id="f75c5621-d804-427b-bc42-daea89114f7f">
+<notes>
+<note appliesTo="source">line: 94</note>
+</notes>
+<segment>
+<source>Ctrl + Alt + A</source>
+</segment>
+</unit>
+<unit id="6e954606-7b4c-4320-b622-28fba6fc5537">
+<notes>
+<note appliesTo="source">line: 96</note>
+</notes>
+<segment>
+<source>You can change this gesture in:</source>
+</segment>
+</unit>
+<unit id="6f6707a1-1e76-46b5-a348-d5e57bebcf84">
+<notes>
+<note appliesTo="source">line: 97</note>
+</notes>
+<segment>
+<source>NVDA menu → Preferences → Input Gestures → Ask OpenRouter</source>
+</segment>
+</unit>
+<unit id="b2a1aac8-680a-49ff-b2bd-5e34eb7a6188">
+<notes>
+<note appliesTo="source">line: 99</note>
+<note appliesTo="source">prefix: ### </note>
+</notes>
+<segment>
+<source>Main Interface</source>
+</segment>
+</unit>
+<unit id="ef1fa93a-54fd-42a5-952b-4e52b93a1f28">
+<notes>
+<note appliesTo="source">line: 101</note>
+</notes>
+<segment>
+<source>The dialog contains three buttons:</source>
+</segment>
+</unit>
+<unit id="5a101451-9f62-4889-956d-34e1aed2a794">
+<notes>
+<note appliesTo="source">line: 103</note>
+<note appliesTo="source">prefix: 1. </note>
+</notes>
+<segment>
+<source>New Chat – Starts a brand new conversation.</source>
+</segment>
+</unit>
+<unit id="899c927c-a788-473b-a434-e6927957054a">
+<notes>
+<note appliesTo="source">line: 104</note>
+<note appliesTo="source">prefix: 2. </note>
+</notes>
+<segment>
+<source>Continue Chat – Resumes the previous conversation (keeps history).</source>
+</segment>
+</unit>
+<unit id="ebd52435-4f48-475e-821a-f2b9a7bd448b">
+<notes>
+<note appliesTo="source">line: 105</note>
+<note appliesTo="source">prefix: 3. </note>
+</notes>
+<segment>
+<source>Close – Closes the dialog (Escape also works).</source>
+</segment>
+</unit>
+<unit id="f424e7df-3f6f-45d8-a499-3ed0b8e0abde">
+<notes>
+<note appliesTo="source">line: 107</note>
+<note appliesTo="source">prefix: ### </note>
+</notes>
+<segment>
+<source>Entering Your Prompt</source>
+</segment>
+</unit>
+<unit id="c59e3113-078e-4361-8f20-d33d64d0ed72">
+<notes>
+<note appliesTo="source">line: 109</note>
+</notes>
+<segment>
+<source>After selecting "New Chat" or "Continue Chat":</source>
+</segment>
+</unit>
+<unit id="696ee838-87c1-4aa3-bc10-9b02d2027bf4">
+<notes>
+<note appliesTo="source">line: 111</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>A multiline text field appears.</source>
+</segment>
+</unit>
+<unit id="c0b17322-fe70-494a-8648-bf47d15d3b5c">
+<notes>
+<note appliesTo="source">line: 112</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Pressing Enter inserts a new line.</source>
+</segment>
+</unit>
+<unit id="539207c5-9f7f-4c22-be10-97158739d9f9">
+<notes>
+<note appliesTo="source">line: 113</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>To send your message:</source>
+</segment>
+</unit>
+<unit id="529b72a4-2430-4bc0-a683-312361860951">
+<notes>
+<note appliesTo="source">line: 114</note>
+</notes>
+<segment>
+<source>  - Press Tab to reach the OK button.</source>
+</segment>
+</unit>
+<unit id="1ebff1ad-dc59-4a28-bd41-a6f1bbc47a2f">
+<notes>
+<note appliesTo="source">line: 115</note>
+</notes>
+<segment>
+<source>  - Press Enter.</source>
+</segment>
+</unit>
+<unit id="a0ba565d-0f35-4d95-b449-5017419a8317">
+<notes>
+<note appliesTo="source">line: 117</note>
+<note appliesTo="source">prefix: ### </note>
+</notes>
+<segment>
+<source>Reading the Response</source>
+</segment>
+</unit>
+<unit id="72def7d7-c9cb-46c6-935b-a1d0e884d6d1">
+<notes>
+<note appliesTo="source">line: 119</note>
+</notes>
+<segment>
+<source>After processing, a results window appears containing:</source>
+</segment>
+</unit>
+<unit id="2a75fd18-13a6-447c-930b-b84c39e72875">
+<notes>
+<note appliesTo="source">line: 121</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>"You said:" followed by your message.</source>
+</segment>
+</unit>
+<unit id="f747c1b2-f080-4b3c-80dc-e940735819b3">
+<notes>
+<note appliesTo="source">line: 122</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>"The model replied:" followed by the response.</source>
+</segment>
+</unit>
+<unit id="e7118cdc-a6da-4310-b76b-43b5a2fa117b">
+<notes>
+<note appliesTo="source">line: 123</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>A "Copy" button to copy the response.</source>
+</segment>
+</unit>
+<unit id="dc80b21d-2325-4149-81f0-9cf16ecfc45b">
+<notes>
+<note appliesTo="source">line: 125</note>
+</notes>
+<segment>
+<source>If full history display is enabled, each exchange is clearly separated by headings, making it easy to navigate using your NVDA's quick navigation keys.</source>
+</segment>
+</unit>
+<unit id="718d49ea-367c-4ac6-aad0-442fe031b63b">
+<notes>
+<note appliesTo="source">line: 127</note>
+<note appliesTo="source">prefix: ## </note>
+</notes>
+<segment>
+<source>Display Options</source>
+</segment>
+</unit>
+<unit id="d8742bc6-16a2-4e2e-b497-42f2e3ef7e18">
+<notes>
+<note appliesTo="source">line: 129</note>
+</notes>
+<segment>
+<source>If you prefer to only display the latest response instead of the full conversation history:</source>
+</segment>
+</unit>
+<unit id="f0a54fbd-cd36-4e2a-8ca0-2afb0170e3dd">
+<notes>
+<note appliesTo="source">line: 131</note>
+<note appliesTo="source">prefix: 1. </note>
+</notes>
+<segment>
+<source>Open NVDA menu (NVDA + N).</source>
+</segment>
+</unit>
+<unit id="940be1aa-52e4-4485-b366-c4bfc6aee7b0">
+<notes>
+<note appliesTo="source">line: 132</note>
+<note appliesTo="source">prefix: 2. </note>
+</notes>
+<segment>
+<source>Go to Preferences → Settings.</source>
+</segment>
+</unit>
+<unit id="fb47e112-386f-4d9b-a926-88efd8b583f3">
+<notes>
+<note appliesTo="source">line: 133</note>
+<note appliesTo="source">prefix: 3. </note>
+</notes>
+<segment>
+<source>Select Ask OpenRouter.</source>
+</segment>
+</unit>
+<unit id="4df257d7-5e97-4aba-91bc-512e1a07dd97">
+<notes>
+<note appliesTo="source">line: 134</note>
+<note appliesTo="source">prefix: 4. </note>
+</notes>
+<segment>
+<source>Uncheck:</source>
+</segment>
+</unit>
+<unit id="9b610e33-f4a3-44ce-be51-a7defaf8451d">
+<notes>
+<note appliesTo="source">line: 135</note>
+</notes>
+<segment>
+<source>   "Display the full chat history for continuous discussions"</source>
+</segment>
+</unit>
+<unit id="edb3f9e0-25bc-40b7-9af4-b54fb4bfc164">
+<notes>
+<note appliesTo="source">line: 136</note>
+<note appliesTo="source">prefix: 5. </note>
+</notes>
+<segment>
+<source>Press OK.</source>
+</segment>
+</unit>
+<unit id="a38cbc4d-3dca-4af9-9f7c-8f71b3a4f96b">
+<notes>
+<note appliesTo="source">line: 138</note>
+<note appliesTo="source">prefix: ## </note>
+</notes>
+<segment>
+<source>Unassigned Scripts</source>
+</segment>
+</unit>
+<unit id="db71b444-5c90-4b60-af9d-db6505c25341">
+<notes>
+<note appliesTo="source">line: 140</note>
+</notes>
+<segment>
+<source>The following scripts do not have gestures assigned.</source>
+</segment>
+</unit>
+<unit id="d760f259-113e-40a6-b31f-322989c0b2f6">
+<notes>
+<note appliesTo="source">line: 141</note>
+</notes>
+<segment>
+<source>You can define them in:</source>
+</segment>
+</unit>
+<unit id="79750b7a-2690-4f8d-8f72-d3048e714cee">
+<notes>
+<note appliesTo="source">line: 143</note>
+</notes>
+<segment>
+<source>Preferences → Input Gestures → Ask OpenRouter</source>
+</segment>
+</unit>
+<unit id="33532aeb-528e-410f-a173-2ecfe2e1776d">
+<notes>
+<note appliesTo="source">line: 145</note>
+</notes>
+<segment>
+<source>Available scripts:</source>
+</segment>
+</unit>
+<unit id="eddb9f5d-e1f4-429c-8917-60f70bd13b80">
+<notes>
+<note appliesTo="source">line: 147</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Open the add-on settings panel</source>
+</segment>
+</unit>
+<unit id="37c37842-b26c-44f7-9275-cacf365f0452">
+<notes>
+<note appliesTo="source">line: 148</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Start a new chat directly</source>
+</segment>
+</unit>
+<unit id="fbc5a422-aba6-4fc3-8c3d-9aac86adf45e">
+<notes>
+<note appliesTo="source">line: 149</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Continue an existing chat directly</source>
+</segment>
+</unit>
+<unit id="2b177e23-ab00-4216-b78c-99d30634b543">
+<notes>
+<note appliesTo="source">line: 151</note>
+<note appliesTo="source">prefix: ## </note>
+</notes>
+<segment>
+<source>Free Models, Paid Models and Quotas</source>
+</segment>
+</unit>
+<unit id="cb7d1216-dbcc-43e1-9c5c-a4975a2a2fe7">
+<notes>
+<note appliesTo="source">line: 153</note>
+<note appliesTo="source">prefix: ### </note>
+</notes>
+<segment>
+<source>Free Model Usage</source>
+</segment>
+</unit>
+<unit id="6f4dfbb6-0b1e-44d2-baab-88adff7ddfff">
+<notes>
+<note appliesTo="source">line: 155</note>
+</notes>
+<segment>
+<source>When "Use all models, including paid ones" is unchecked:</source>
+</segment>
+</unit>
+<unit id="bfe2042b-1f4b-48a6-8a2a-3e6dc1b8aef3">
+<notes>
+<note appliesTo="source">line: 157</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Only models labeled as free on OpenRouter are used.</source>
+</segment>
+</unit>
+<unit id="04e7fce7-8a40-4a55-b146-80d8b9e212a2">
+<notes>
+<note appliesTo="source">line: 158</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Free models have:</source>
+</segment>
+</unit>
+<unit id="9549f580-6f62-4345-98f1-52b9f3a0cd7a">
+<notes>
+<note appliesTo="source">line: 159</note>
+</notes>
+<segment>
+<source>  - Limited daily quotas</source>
+</segment>
+</unit>
+<unit id="718e8ce9-7731-426e-b811-ee9d49e3542b">
+<notes>
+<note appliesTo="source">line: 160</note>
+</notes>
+<segment>
+<source>  - Shared rate limits</source>
+</segment>
+</unit>
+<unit id="07e900dc-a526-41b7-b461-7d9a8f2f62cd">
+<notes>
+<note appliesTo="source">line: 161</note>
+</notes>
+<segment>
+<source>  - Possible temporary unavailability</source>
+</segment>
+</unit>
+<unit id="d3089c13-2393-4455-bd7f-288d2d88df8c">
+<notes>
+<note appliesTo="source">line: 163</note>
+</notes>
+<segment>
+<source>The add-on automatically rotates between free models to improve availability.</source>
+</segment>
+</unit>
+<unit id="71735492-8458-4df6-9118-becbd01c44df">
+<notes>
+<note appliesTo="source">line: 165</note>
+<note appliesTo="source">prefix: ### </note>
+</notes>
+<segment>
+<source>Paid Model Usage</source>
+</segment>
+</unit>
+<unit id="6c7e4f95-9f84-4e49-9ab2-cc5f5fc59e2e">
+<notes>
+<note appliesTo="source">line: 167</note>
+</notes>
+<segment>
+<source>When "Use all models, including paid ones" is checked:</source>
+</segment>
+</unit>
+<unit id="d7d2df10-ad26-452b-bfeb-2e2f95c7202f">
+<notes>
+<note appliesTo="source">line: 169</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>The add-on uses the exact model you selected.</source>
+</segment>
+</unit>
+<unit id="7997a458-1e93-45b0-8f51-cf5a06a5ccbc">
+<notes>
+<note appliesTo="source">line: 170</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>This may include paid models.</source>
+</segment>
+</unit>
+<unit id="5a20b298-a58e-4836-bb94-242d82300750">
+<notes>
+<note appliesTo="source">line: 171</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>You must have sufficient OpenRouter credits.</source>
+</segment>
+</unit>
+<unit id="762a48b6-81d0-4974-b95f-7283249228bb">
+<notes>
+<note appliesTo="source">line: 172</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Provider rate limits may apply.</source>
+</segment>
+</unit>
+<unit id="26d3b9ba-50cc-4d8b-a375-f1b036409364">
+<notes>
+<note appliesTo="source">line: 174</note>
+</notes>
+<segment>
+<source>Errors such as:</source>
+</segment>
+</unit>
+<unit id="801fa76b-003b-4869-bd4d-0e42cc060afc">
+<notes>
+<note appliesTo="source">line: 175</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>402 (insufficient credits)</source>
+</segment>
+</unit>
+<unit id="29116e32-835e-49a2-a6e8-57c8c7050604">
+<notes>
+<note appliesTo="source">line: 176</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>429 (rate limited)</source>
+</segment>
+</unit>
+<unit id="44f9c60f-904c-42b8-8b6f-00d6de869e67">
+<notes>
+<note appliesTo="source">line: 177</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>404 (model not allowed by privacy settings)</source>
+</segment>
+</unit>
+<unit id="2c7b20c1-e1ae-4f1b-a8fa-58c3e99f5094">
+<notes>
+<note appliesTo="source">line: 179</note>
+</notes>
+<segment>
+<source>are displayed directly to inform you of the issue.</source>
+</segment>
+</unit>
+<unit id="9be98821-4026-42e7-95a2-e1b7617fd036">
+<notes>
+<note appliesTo="source">line: 181</note>
+<note appliesTo="source">prefix: ## </note>
+</notes>
+<segment>
+<source>Privacy Settings Reminder</source>
+</segment>
+</unit>
+<unit id="0e61a993-e0dd-4a0d-a74d-197d702857f4">
+<notes>
+<note appliesTo="source">line: 183</note>
+</notes>
+<segment>
+<source>If you use free models and receive an error mentioning:</source>
+</segment>
+</unit>
+<unit id="95b3e62b-4074-4d38-835b-dc155168e8af">
+<notes>
+<note appliesTo="source">line: 185</note>
+</notes>
+<segment>
+<source>&gt; "No endpoints found matching your data policy"</source>
+</segment>
+</unit>
+<unit id="b4f9c918-4b03-4c89-a9fd-0858f4f7b62c">
+<notes>
+<note appliesTo="source">line: 187</note>
+</notes>
+<segment>
+<source>You may need to adjust your OpenRouter privacy settings:</source>
+</segment>
+</unit>
+<unit id="04ac91ed-88ff-4099-b513-92abd87b039e">
+<notes>
+<note appliesTo="source">line: 189</note>
+</notes>
+<segment>
+<source>https://openrouter.ai/settings/privacy</source>
+</segment>
+</unit>
+<unit id="b8c7c9f6-d2bf-4900-a1bc-78c6bc210350">
+<notes>
+<note appliesTo="source">line: 191</note>
+</notes>
+<segment>
+<source>Ensure that public/free model endpoints are allowed.</source>
+</segment>
+</unit>
+<unit id="62f8fb94-260f-4b49-a396-723d3bb946ed">
+<notes>
+<note appliesTo="source">line: 193</note>
+<note appliesTo="source">prefix: ## </note>
+</notes>
+<segment>
+<source>Compatibility ##</source>
+</segment>
+</unit>
+<unit id="2bcaede0-58cc-4216-901e-c245c15cd531">
+<notes>
+<note appliesTo="source">line: 195</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>This add-on is compatible with the versions of NVDA ranging from 2025.1 and beyond.</source>
+</segment>
+</unit>
+<unit id="196018c0-a2e5-45d1-9ed3-2d1aa55d9499">
+<notes>
+<note appliesTo="source">line: 197</note>
+<note appliesTo="source">prefix: ## </note>
+</notes>
+<segment>
+<source>Changes for 20260221.0.0</source>
+</segment>
+</unit>
+<unit id="d2b07ad4-06f2-46c8-9aba-cb735be9021b">
+<notes>
+<note appliesTo="source">line: 199</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Added manual selection of any available model from the settings panel</source>
+</segment>
+</unit>
+<unit id="b6627f9d-5fc4-4d55-b07b-a157e8e4547e">
+<notes>
+<note appliesTo="source">line: 200</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Added ability to use paid models</source>
+</segment>
+</unit>
+<unit id="12a86fd1-5ab4-472b-a11c-31486c6784c9">
+<notes>
+<note appliesTo="source">line: 202</note>
+<note appliesTo="source">prefix: ## </note>
+</notes>
+<segment>
+<source>Changes for 20260217.0.0</source>
+</segment>
+</unit>
+<unit id="31405a74-4a74-40e1-914d-703202bb177e">
+<notes>
+<note appliesTo="source">line: 204</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Initial version</source>
+</segment>
+</unit>
+</file>
+</xliff>
