@@ -21,6 +21,7 @@ import urllib.request
 import urllib.error
 import time
 from typing import List, Dict, Callable, Optional, Any
+
 addonHandler.initTranslation()
 
 
@@ -30,9 +31,9 @@ _: Callable[[str], str]
 _unavailableModels: Dict[str, float] = {}
 
 # Cooldowns (seconds)
-_RATE_LIMIT_COOLDOWN: int = 300      # 429
-_POLICY_COOLDOWN: int = 180         # 404
-_PAYMENT_COOLDOWN: int = 1800       # 402
+_RATE_LIMIT_COOLDOWN: int = 300  # 429
+_POLICY_COOLDOWN: int = 180  # 404
+_PAYMENT_COOLDOWN: int = 1800  # 402
 
 
 def disableInSecureMode(decoratedCls):
@@ -115,10 +116,7 @@ def _cleanupUnavailableModels() -> None:
 	"""
 	currentTime: float = time.time()
 
-	expired = [
-		model for model, expiry in _unavailableModels.items()
-		if currentTime > expiry
-	]
+	expired = [model for model, expiry in _unavailableModels.items() if currentTime > expiry]
 
 	for model in expired:
 		del _unavailableModels[model]
@@ -255,13 +253,15 @@ def getAvailableModels(apiKey: str) -> List[Dict[str, object]]:
 		if not m.get("top_provider") or not m.get("context_length"):
 			continue
 
-		availableModels.append({
-			"id": m.get("id"),
-			"promptPricing": float(m.get("pricing", {}).get("prompt", 0)),
-			"completionPricing": float(m.get("pricing", {}).get("completion", 0)),
-			"contextLength": m.get("context_length"),
-			"deprecated": m.get("deprecated", False),
-		})
+		availableModels.append(
+			{
+				"id": m.get("id"),
+				"promptPricing": float(m.get("pricing", {}).get("prompt", 0)),
+				"completionPricing": float(m.get("pricing", {}).get("completion", 0)),
+				"contextLength": m.get("context_length"),
+				"deprecated": m.get("deprecated", False),
+			}
+		)
 
 	return availableModels
 
@@ -329,9 +329,9 @@ def getHistory(filename: str) -> str:
 	historyLines: List[str] = []
 	allChat: List[Dict[str, str]] = []
 	# Translators: Message announcing what the user said.
-	userQuestion: str = _('You said:')
+	userQuestion: str = _("You said:")
 	# Translators: Message announcing what the model responded.
-	modelResponse: str = _('Model replied:')
+	modelResponse: str = _("Model replied:")
 
 	if os.path.exists(filename):
 		with open(filename, "rb") as f:
@@ -405,7 +405,7 @@ def askOpenRouter(prompt: str, apiKey: str, new: bool = True) -> None:
 					# Translators: Message informing that no free models are available.
 					_("No free model available at the moment."),
 					# Translators: Title of the error message.
-					title=_("Model Error")
+					title=_("Model Error"),
 				)
 				return
 
@@ -423,27 +423,29 @@ def askOpenRouter(prompt: str, apiKey: str, new: bool = True) -> None:
 					# Translators: Message informing that no free models are available.
 					_("No free model available at the moment."),
 					# Translators: Title of the error message.
-					title=_("Model Error")
+					title=_("Model Error"),
 				)
 				return
 
 	history: List[Dict[str, str]] = loadHistory(historyFile)
 
-	history.append({
-		"role": "user",
-		"content": prompt
-	})
+	history.append(
+		{
+			"role": "user",
+			"content": prompt,
+		}
+	)
 
 	headers: Dict[str, str] = {
 		"Authorization": f"Bearer {apiKey}",
 		"Content-Type": "application/json",
 		"HTTP-Referer": "http://localhost",
-		"X-Title": "My question"
+		"X-Title": "My question",
 	}
 
 	data: Dict[str, Any] = {
 		"model": model,
-		"messages": history
+		"messages": history,
 	}
 
 	maxAttempts: int = 5
@@ -456,13 +458,12 @@ def askOpenRouter(prompt: str, apiKey: str, new: bool = True) -> None:
 			break
 
 		except urllib.error.HTTPError as e:
-
 			# If the user uses their own paid model, do not fallback
 			if useAll:
 				ui.browseableMessage(
 					f"HTTP Error: {e.code}, {e.read().decode('utf-8')}",
 					# Translators: Title of the HTTP error message.
-					title=_("HTTP Error")
+					title=_("HTTP Error"),
 				)
 				return
 
@@ -483,7 +484,7 @@ def askOpenRouter(prompt: str, apiKey: str, new: bool = True) -> None:
 				ui.browseableMessage(
 					f"HTTP Error: {e.code}, {e.read().decode('utf-8')}",
 					# Translators: Title of the HTTP error message.
-					title=_("HTTP Error")
+					title=_("HTTP Error"),
 				)
 				return
 
@@ -491,7 +492,7 @@ def askOpenRouter(prompt: str, apiKey: str, new: bool = True) -> None:
 			ui.browseableMessage(
 				# Translators: Network error message.
 				message=f"{_('Network error:')} {e.reason}",
-				title="Network Error"
+				title="Network Error",
 			)
 			return
 
@@ -500,14 +501,16 @@ def askOpenRouter(prompt: str, apiKey: str, new: bool = True) -> None:
 			# Translators: Message informing that no free models are available at the moment.
 			_("All free models are currently unavailable. Please try again later."),
 			# Translators: Title of the model unavailable error.
-			title=_("Model Unavailable")
+			title=_("Model Unavailable"),
 		)
 		return
 
-	history.append({
-		"role": "assistant",
-		"content": answer
-	})
+	history.append(
+		{
+			"role": "assistant",
+			"content": answer,
+		}
+	)
 
 	saveHistory(history, historyFile)
 
@@ -523,14 +526,14 @@ def askOpenRouter(prompt: str, apiKey: str, new: bool = True) -> None:
 		# Translators: Title of the model response message.
 		title=_("Model Response"),
 		isHtml=True,
-		copyButton=True
+		copyButton=True,
 	)
 
 
 def inputBox(
-		title: str,
-		func: Callable[[str, str, bool], None],
-		new: bool = True
+	title: str,
+	func: Callable[[str, str, bool], None],
+	new: bool = True,
 ) -> None:
 	"""
 	Display a multiline input dialog and send the result to the given function.
@@ -555,7 +558,7 @@ def inputBox(
 		# Translators: Message inviting the user to enter his question.
 		_("Please enter the question you want to ask OpenRouter"),
 		title,
-		style=wx.TE_MULTILINE | wx.OK | wx.CANCEL
+		style=wx.TE_MULTILINE | wx.OK | wx.CANCEL,
 	)
 
 	def callback(result: int) -> None:
@@ -565,7 +568,7 @@ def inputBox(
 					# Translators: Message informing the user that the field is empty, he must fill it in.
 					message=_("You did not enter anything. Please try again."),
 					# Translators: Title of the error message.
-					caption=_("Input Error")
+					caption=_("Input Error"),
 				)
 				return
 
@@ -576,14 +579,14 @@ def inputBox(
 					# Translators: Message informing the user that no API key is configured.
 					message=_("No API key is configured. Please configure it in settings."),
 					# Translators: Title of the error message.
-					caption=_("Configuration Error")
+					caption=_("Configuration Error"),
 				)
 				return
 
 			func(
 				dialog.Value,
 				apiKey,
-				new
+				new,
 			)
 
 	gui.runScriptModalDialog(dialog, callback)
