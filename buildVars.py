@@ -26,7 +26,7 @@ You can either use automatic random selection of free models or choose a specifi
 To use this add-on, you must create an account on https://openrouter.ai and generate an API key.
 Once configured, you can open a dialog that lets you start a new conversation or continue an existing one."""),
 	# version
-	addon_version="20260220.0.1",
+	addon_version="20260505.0.0",
 	# Brief changelog for this version
 	# Translators: what's new content for the add-on version to be shown in the add-on store
 	addon_changelog=_("""* Updated translations from Crowdin
@@ -42,7 +42,7 @@ Once configured, you can open a dialog that lets you start a new conversation or
 	# Minimum NVDA version supported (e.g. "2019.3.0", minor version is optional)
 	addon_minimumNVDAVersion="2025.1.0",
 	# Last NVDA version supported/tested (e.g. "2024.4.0", ideally more recent than minimum version)
-	addon_lastTestedNVDAVersion="2025.1.0",
+	addon_lastTestedNVDAVersion="2026.1.0",
 	# Add-on update channel (default is None, denoting stable releases,
 	# and for development releases, use "dev".)
 	# Do not change unless you know what you are doing!
