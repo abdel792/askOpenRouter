@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en">
-<file id="readme.md" original="https://raw.githubusercontent.com/abdel792/askOpenRouter/41e67525351372052ba9f5ba91a440ed03d1904c/readme.md">
+<file id="readme.md" original="https://raw.githubusercontent.com/abdel792/askOpenRouter/0d19f1a1b8dd36790555551d7af95670a0a75b07/readme.md">
 <skeleton>
 # $(ID:a3c954d8-c424-480a-af5d-dc2dd5fada80)
 
@@ -49,7 +49,7 @@ $(ID:a9f02e60-74b9-4b20-bfea-da309c084e95)
 
 $(ID:c0f8466a-003b-4497-9b2f-1cb19a48882c)
 
-$(ID:04b8ecb7-e47a-4028-8fd8-21fea596b8b2)
+$(ID:3e1b09d7-e09b-4603-9d12-1b68f3e7b84e)
 $(ID:d20b9570-27e3-413e-9b69-990be3e116fe)
 
 ## $(ID:eac2b838-95de-4b2f-ba4e-fc654e283f3f)
@@ -140,7 +140,7 @@ $(ID:9b610e33-f4a3-44ce-be51-a7defaf8451d)
 
 ## $(ID:a38cbc4d-3dca-4af9-9f7c-8f71b3a4f96b)
 
-$(ID:40a9a0bf-78d6-42a0-9f65-50d4cbbd067c)
+$(ID:f1d27fde-d978-4329-820b-fb03cc2b1186)
 $(ID:d760f259-113e-40a6-b31f-322989c0b2f6)
 
 $(ID:79750b7a-2690-4f8d-8f72-d3048e714cee)
@@ -479,7 +479,7 @@ $(ID:b8c7c9f6-d2bf-4900-a1bc-78c6bc210350)
 <source>"Show API key"</source>
 </segment>
 </unit>
-<unit id="04b8ecb7-e47a-4028-8fd8-21fea596b8b2">
+<unit id="3e1b09d7-e09b-4603-9d12-1b68f3e7b84e">
 <notes>
 <note appliesTo="source">line: 49</note>
 </notes>
@@ -973,7 +973,7 @@ $(ID:b8c7c9f6-d2bf-4900-a1bc-78c6bc210350)
 <source>Unassigned Scripts</source>
 </segment>
 </unit>
-<unit id="40a9a0bf-78d6-42a0-9f65-50d4cbbd067c">
+<unit id="f1d27fde-d978-4329-820b-fb03cc2b1186">
 <notes>
 <note appliesTo="source">line: 140</note>
 </notes>
