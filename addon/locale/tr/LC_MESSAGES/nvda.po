@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nvdaaddons\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2026-04-05 03:08+0000\n"
-"PO-Revision-Date: 2026-05-01 04:32\n"
+"POT-Creation-Date: 2026-05-12 09:13+0000\n"
+"PO-Revision-Date: 2026-05-22 19:26\n"
 "Last-Translator: \n"
 "Language-Team: Turkish\n"
 "Language: tr_TR\n"
@@ -104,7 +104,7 @@ msgstr "HTTP Hatası"
 #. Translators: Network error message.
 #: addon\globalPlugins\askOpenRouter\functions.py:493
 msgid "Network error:"
-msgstr ""
+msgstr "Ağ hatası:"
 
 #. Translators: Message informing that no free models are available at the moment.
 #: addon\globalPlugins\askOpenRouter\functions.py:501
@@ -188,8 +188,8 @@ msgstr "Bu eklenti OpenRouter platformunda bulunan Yapay Zeka modellerine soru s
 #. Brief changelog for this version
 #. Translators: what's new content for the add-on version to be shown in the add-on store
 #: buildVars.py:32
-msgid "Changes for 20260301.0.0\n"
-"Updated documentation."
-msgstr "20260301.0.0 için değişiklikler\n"
-"Belgeler güncellendi."
+msgid "* Updated translations from Crowdin\n"
+"* Added support for NVDA 2026 API"
+msgstr "* Crowdin'den güncellenmiş çeviriler\n"
+"* NVDA 2026 API'si için destek eklendi"
 
