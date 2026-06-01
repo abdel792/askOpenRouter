@@ -46,7 +46,7 @@ NVDA ayarları panelinde, "OpenRouter API Key" alanının hemen ardından şu et
 
 "Show API key"
 
-İşaretlenirse API anahtarının karakterleri görünür hale gelir.  
+İşaretlenirse API anahtarının karakterleri görünür hale gelir.
 Varsayılan olarak güvenlik nedeniyle gizlenirler.
 
 ## Model Seçim Ayarları
@@ -138,7 +138,7 @@ Konuşma geçmişinin tamamı yerine yalnızca en son yanıtı görüntülemeyi 
 
 ## Atanmamış Komut Dosyaları
 
-Aşağıdaki komutlara hareket atanmamıştır.  
+Aşağıdaki komutlara hareket atanmamıştır.
 Bunları şu yoldan tanımlayabilirsiniz:
 
 Tercihler → Girdi Hareketleri → Ask OpenRouter
