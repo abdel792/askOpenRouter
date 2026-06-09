@@ -32,7 +32,7 @@ Bu eklentiyi kullanmak için OpenRouter'dan bir API anahtarınızın olması ger
 5. Anahtarınıza bir ad verin (örneğin: "OpenRouter API anahtarım") ve "Create"e tıklayın.
 6. Önemli: Anahtarınız yalnızca bir kez görüntülenecektir. Hemen kopyalayın ve güvenli bir yerde saklayın.
 
-### 2.2) NVDA'da anahtarın ayarlanması
+### 2)2.2) NVDA'da anahtarın ayarlanması
 
 1. NVDA menüsünü açın (NVDA + N).
 2. Tercihler'e ve ardından Ayarlar'a gidin.
