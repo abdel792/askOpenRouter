@@ -45,7 +45,7 @@ In the NVDA settings panel, just after the "OpenRouter API Key" field, there is 
 
 "Show API key"
 
-If checked, the characters of the API key become visible.  
+If checked, the characters of the API key become visible.
 By default, they are hidden for security reasons.
 
 ## Model Selection Settings
@@ -136,7 +136,7 @@ If you prefer to only display the latest response instead of the full conversati
 
 ## Unassigned Scripts
 
-The following scripts do not have gestures assigned.  
+The following scripts do not have gestures assigned.
 You can define them in:
 
 Preferences → Input Gestures → Ask OpenRouter
