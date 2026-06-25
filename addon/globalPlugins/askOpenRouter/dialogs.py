@@ -1,13 +1,16 @@
+# pyright: reportUnusedCallResult=false
 # globalPlugins/askOpenRouter/dialogs.py
 
 # Copyright(C) 2026-2028 Abdel <abdelkrim.bensaid@gmail.com>
 # Released under GPL 2
 
+from collections.abc import Callable
+import typing
+from typing import Any, cast
 import wx
 import addonHandler
 import config
 import gui
-from typing import Callable, List, Dict, Optional, cast
 
 from gui.settingsDialogs import SettingsPanel
 from .functions import askOpenRouter, inputBox, getAvailableModels
@@ -15,7 +18,7 @@ from .functions import askOpenRouter, inputBox, getAvailableModels
 addonHandler.initTranslation()
 
 _: Callable[[str], str]
-addonSummary: str = addonHandler.getCodeAddon().manifest["summary"]
+addonSummary: str = cast(str, cast(Any, addonHandler).getCodeAddon().manifest["summary"])
 
 
 # Chat Dialog
@@ -29,9 +32,9 @@ class ChatDialog(wx.Dialog):
 		- Close the dialog
 	"""
 
-	_instance: Optional["ChatDialog"] = None
+	_instance: "ChatDialog | None" = None
 
-	def __new__(cls, *args, **kwargs) -> "ChatDialog":
+	def __new__(cls, *args: Any, **kwargs: Any) -> "ChatDialog":
 		if not ChatDialog._instance:
 			return super().__new__(cls, *args, **kwargs)
 		return ChatDialog._instance
@@ -51,49 +54,48 @@ class ChatDialog(wx.Dialog):
 		super().__init__(
 			parent,
 			# Translators: Title of the dialog box.
-			title=_("Chat Manager")
+			title=_("Chat Manager"),
 		)
 
 		mainSizer: wx.BoxSizer = wx.BoxSizer(wx.VERTICAL)
 		sHelper: gui.guiHelper.BoxSizerHelper = gui.guiHelper.BoxSizerHelper(
 			self,
-			wx.VERTICAL
+			wx.VERTICAL,
 		)
 
-		buttonGroup: gui.guiHelper.ButtonHelper = \
-			gui.guiHelper.ButtonHelper(wx.HORIZONTAL)
+		buttonGroup: gui.guiHelper.ButtonHelper = gui.guiHelper.ButtonHelper(wx.HORIZONTAL)
 
 		self.newButton: wx.Button = buttonGroup.addButton(
 			self,
 			# Translators: Prompt label to create a new chat.
-			label=_("C&reate a New Chat")
+			label=_("C&reate a New Chat"),
 		)
 
 		self.continueButton: wx.Button = buttonGroup.addButton(
 			self,
 			# Translators: Prompt label to continue an existing chat.
-			label=_("Co&ntinue a Chat")
+			label=_("Co&ntinue a Chat"),
 		)
 
 		self.closeButton: wx.Button = buttonGroup.addButton(
 			self,
 			# Translators: Label of the closing button.
-			label=_("&Close")
+			label=_("&Close"),
 		)
 
 		self.newButton.SetDefault()
 		self.SetEscapeId(self.closeButton.GetId())
 
-		self.newButton.Bind(wx.EVT_BUTTON, self.onNew)
-		self.continueButton.Bind(wx.EVT_BUTTON, self.onContinue)
-		self.Bind(wx.EVT_BUTTON, self.onClose, self.closeButton)
+		self.newButton.Bind(wx.EVT_BUTTON, self.onNew)  # type: ignore
+		self.continueButton.Bind(wx.EVT_BUTTON, self.onContinue)  # type: ignore
+		self.Bind(wx.EVT_BUTTON, self.onClose, self.closeButton)  # type: ignore
 
 		sHelper.addItem(buttonGroup)
 
-		mainSizer.Add(
+		mainSizer.Add(  # type: ignore
 			sHelper.sizer,
 			border=gui.guiHelper.BORDER_FOR_DIALOGS,
-			flag=wx.ALL | wx.EXPAND
+			flag=wx.ALL | wx.EXPAND,
 		)
 
 		self.SetSizerAndFit(mainSizer)
@@ -116,7 +118,7 @@ class ChatDialog(wx.Dialog):
 		inputBox(
 			# Translators: Title of the dialog box to start a new chat.
 			_("New Chat"),
-			askOpenRouter
+			askOpenRouter,
 		)
 
 	def onContinue(self, evt: wx.CommandEvent) -> None:
@@ -127,9 +129,8 @@ class ChatDialog(wx.Dialog):
 			# Translators: Title of the dialog box to continue an existing chat.
 			_("Continue Chat"),
 			askOpenRouter,
-			new=False
+			new=False,
 		)
-
 
 
 # Settings Panel
@@ -147,15 +148,15 @@ class OpenRouterSettingsPanel(SettingsPanel):
 
 	title: str = addonSummary
 
-	def makeSettings(self, settingsSizer: wx.Sizer) -> None:
+	@typing.override
+	def makeSettings(self, sizer: wx.Sizer) -> None:
 		"""
 		Build the settings UI components.
 
 		Args:
-			settingsSizer (wx.Sizer): Parent sizer provided by NVDA.
+			sizer (wx.Sizer): Parent sizer provided by NVDA.
 		"""
-		self.sHelper: gui.guiHelper.BoxSizerHelper = \
-			gui.guiHelper.BoxSizerHelper(self, sizer=settingsSizer)
+		self.sHelper: gui.guiHelper.BoxSizerHelper = gui.guiHelper.BoxSizerHelper(self, sizer=sizer)
 
 		# =========================
 		# API KEY
@@ -164,18 +165,21 @@ class OpenRouterSettingsPanel(SettingsPanel):
 		self.apiKeyLabel: wx.StaticText = wx.StaticText(
 			self,
 			# Translators: Label of the field that must contain the OpenRouter API key.
-			label=_("OpenRouter API Key:")
+			label=_("OpenRouter API Key:"),
 		)
 		self.sHelper.addItem(self.apiKeyLabel)
 
 		self.apiKeyHidden: wx.TextCtrl = wx.TextCtrl(
 			self,
-			style=wx.TE_PASSWORD
+			style=wx.TE_PASSWORD,
 		)
 		self.sHelper.addItem(self.apiKeyHidden, flag=wx.EXPAND)
 
+		# OpenRouter configuration dictionary
+		conf_dict = cast(dict[str, Any], config.conf["askOpenRouter"])
+
 		self.apiKeyHidden.SetValue(
-			config.conf["askOpenRouter"]["apiKey"]
+			cast(str, conf_dict["apiKey"]),
 		)
 
 		self.apiKeyVisible: wx.TextCtrl = wx.TextCtrl(self)
@@ -185,13 +189,13 @@ class OpenRouterSettingsPanel(SettingsPanel):
 		self.showApiKeyCheckBox: wx.CheckBox = wx.CheckBox(
 			self,
 			# Translators: Label of the checkbox to display the OpenRouter API key.
-			label=_("Show API key")
+			label=_("Show API key"),
 		)
 		self.sHelper.addItem(self.showApiKeyCheckBox)
 
-		self.showApiKeyCheckBox.Bind(
+		self.showApiKeyCheckBox.Bind(  # type: ignore
 			wx.EVT_CHECKBOX,
-			self.onToggleApiVisibility
+			self.onToggleApiVisibility,
 		)
 
 		# =========================
@@ -201,12 +205,12 @@ class OpenRouterSettingsPanel(SettingsPanel):
 		self.fullHistoryCheckBox: wx.CheckBox = wx.CheckBox(
 			self,
 			# Translators: Label of the checkbox to display chat history.
-			label=_("Display the full chat history for continuous discussions")
+			label=_("Display the full chat history for continuous discussions"),
 		)
 		self.sHelper.addItem(self.fullHistoryCheckBox)
 
 		self.fullHistoryCheckBox.SetValue(
-			config.conf["askOpenRouter"]["fullHistory"]
+			cast(bool, conf_dict["fullHistory"]),
 		)
 
 		# =========================
@@ -215,19 +219,18 @@ class OpenRouterSettingsPanel(SettingsPanel):
 
 		self.useAllModelsCheckBox: wx.CheckBox = wx.CheckBox(
 			self,
-			# Translators: 
 			# Translators: Label of the checkbox to show the list of models, including paid ones.
-			label=_("Use all models, including paid ones.")
+			label=_("Use all models, including paid ones."),
 		)
 		self.sHelper.addItem(self.useAllModelsCheckBox)
 
 		self.useAllModelsCheckBox.SetValue(
-			config.conf["askOpenRouter"].get("useAllModels", False)
+			cast(bool, conf_dict.get("useAllModels", False)),
 		)
 
-		self.useAllModelsCheckBox.Bind(
+		self.useAllModelsCheckBox.Bind(  # type: ignore
 			wx.EVT_CHECKBOX,
-			self.onToggleModelsList
+			self.onToggleModelsList,
 		)
 
 		# =========================
@@ -238,7 +241,7 @@ class OpenRouterSettingsPanel(SettingsPanel):
 		self.sHelper.addItem(self.modelsList, flag=wx.EXPAND)
 
 		self.modelsList.Hide()
-		self.modelsData: List[Dict[str, object]] = []
+		self.modelsData: list[dict[str, object]] = []
 
 		wx.CallAfter(self.onToggleModelsList, None)
 
@@ -259,7 +262,7 @@ class OpenRouterSettingsPanel(SettingsPanel):
 
 		self.Layout()
 
-	def onToggleModelsList(self, evt: Optional[wx.CommandEvent]) -> None:
+	def onToggleModelsList(self, evt: wx.CommandEvent | None) -> None:
 		"""
 		Show or hide the models list depending on checkbox state.
 		"""
@@ -289,8 +292,7 @@ class OpenRouterSettingsPanel(SettingsPanel):
 			return
 
 		try:
-			models: List[Dict[str, object]] = \
-				getAvailableModels(apiKey)
+			models: list[dict[str, object]] = getAvailableModels(apiKey)
 		except Exception:
 			return
 
@@ -298,7 +300,7 @@ class OpenRouterSettingsPanel(SettingsPanel):
 
 		self.modelsData = models
 
-		displayNames: List[str] = []
+		displayNames: list[str] = []
 
 		for m in models:
 			price: float = cast(float, m["promptPricing"])
@@ -307,10 +309,8 @@ class OpenRouterSettingsPanel(SettingsPanel):
 
 		self.modelsList.Set(displayNames)
 
-		savedModel: str = config.conf["askOpenRouter"].get(
-			"selectedModel",
-			""
-		)
+		conf_dict = cast(dict[str, Any], config.conf["askOpenRouter"])
+		savedModel: str = cast(str, conf_dict.get("selectedModel", ""))
 
 		for index, m in enumerate(models):
 			if m["id"] == savedModel:
@@ -328,21 +328,18 @@ class OpenRouterSettingsPanel(SettingsPanel):
 			return self.apiKeyVisible.GetValue()
 		return self.apiKeyHidden.GetValue()
 
+	@typing.override
 	def onSave(self) -> None:
 		"""
 		Save settings into NVDA configuration.
 		"""
-		config.conf["askOpenRouter"]["apiKey"] = \
-			self.getApiKeyValue().strip()
+		conf_dict = cast(dict[str, Any], config.conf["askOpenRouter"])
 
-		config.conf["askOpenRouter"]["fullHistory"] = \
-			self.fullHistoryCheckBox.GetValue()
-
-		config.conf["askOpenRouter"]["useAllModels"] = \
-			self.useAllModelsCheckBox.GetValue()
+		conf_dict["apiKey"] = self.getApiKeyValue().strip()
+		conf_dict["fullHistory"] = self.fullHistoryCheckBox.GetValue()
+		conf_dict["useAllModels"] = self.useAllModelsCheckBox.GetValue()
 
 		index: int = self.modelsList.GetSelection()
 
 		if index != wx.NOT_FOUND and self.modelsData:
-			config.conf["askOpenRouter"]["selectedModel"] = \
-				self.modelsData[index]["id"]
+			conf_dict["selectedModel"] = self.modelsData[index]["id"]
