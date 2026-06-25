@@ -1,4 +1,3 @@
-# pyright: reportUnusedCallResult=false
 # globalPlugins/askOpenRouter/functions.py
 
 # Copyright(C) 2026-2028 Abdel <abdelkrim.bensaid@gmail.com>
