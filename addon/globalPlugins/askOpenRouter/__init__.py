@@ -1,3 +1,4 @@
+# pyright: reportUnusedCallResult=false
 # globalPlugins/askOpenRouter/__init__.py
 
 # Copyright(C) 2026-2028 Abdel <abdelkrim.bensaid@gmail.com>
@@ -5,13 +6,15 @@
 # This file is covered by the GNU General Public License.
 # See the file COPYING for more details.
 
+from collections.abc import Callable
 import scriptHandler
 import config
 import wx
 import addonHandler
 import globalPluginHandler
 import gui
-from typing import Callable
+import typing
+from typing import Any, cast
 from .dialogs import addonSummary, OpenRouterSettingsPanel, ChatDialog
 from gui.settingsDialogs import NVDASettingsDialog
 from .functions import disableInSecureMode
@@ -25,63 +28,82 @@ _: Callable[[str], str]
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	scriptCategory = addonSummary
 
-	def __init__(self, *args, **kwargs):
+	def __init__(self, *args: Any, **kwargs: Any) -> None:
 		super().__init__(*args, **kwargs)
 
-		if "askOpenRouter" not in config.conf.spec:
-			config.conf.spec["askOpenRouter"] = {
+		# Use cast(Any) to prevent reportUnknownMemberType on config.conf.spec
+		conf_any = cast(Any, config.conf)
+		if "askOpenRouter" not in conf_any.spec:
+			conf_any.spec["askOpenRouter"] = {
 				"apiKey": "string(default='')",
 				"fullHistory": "boolean(default=True)",
 				"useAllModels": "boolean(default=False)",
-				"selectedModel": "string(default='')"
+				"selectedModel": "string(default='')",
 			}
 
 		gui.settingsDialogs.NVDASettingsDialog.categoryClasses.append(
-			OpenRouterSettingsPanel
+			OpenRouterSettingsPanel,
 		)
 
-	def terminate(self):
+	@typing.override
+	def terminate(self) -> None:
 		if OpenRouterSettingsPanel in gui.settingsDialogs.NVDASettingsDialog.categoryClasses:
 			gui.settingsDialogs.NVDASettingsDialog.categoryClasses.remove(
-				OpenRouterSettingsPanel
+				OpenRouterSettingsPanel,
 			)
 
-	def onChatDialog(self, evt):
-		gui.mainFrame.prePopup()
-		dialog = ChatDialog(gui.mainFrame)
+	def onChatDialog(self, evt: Any) -> None:
+		# Guard against Optional (MainFrame | None) type on gui.mainFrame
+		mainFrame = gui.mainFrame
+		if mainFrame is None:
+			return
+
+		mainFrame.prePopup()
+		dialog = ChatDialog(mainFrame)
 		dialog.Show()
-		gui.mainFrame.postPopup()
+		mainFrame.postPopup()
 
 	@scriptHandler.script(
 		# Translators: Description of the script which opens the interaction dialog box with OpenRouter.
 		description=_("Opens a dialog allowing the user to ask questions to OpenRouter"),
 		gesture="kb:control+alt+a",
 	)
-	def script_openRouterDialog(self, gesture):
-		wx.CallAfter(self.onChatDialog, gui.mainFrame)
+	def script_openRouterDialog(self, gesture: Any) -> None:
+		wx.CallAfter(self.onChatDialog, None)
 
 	@scriptHandler.script(
 		# Translators: Description of the script which allows to create a new chat.
 		description=_("Opens the prompt to start a new OpenRouter chat."),
 	)
-	def script_newChat(self, gesture):
-		dialog = ChatDialog(gui.mainFrame)
-		dialog.onNew(None)
+	def script_newChat(self, gesture: Any) -> None:
+		mainFrame = gui.mainFrame
+		if mainFrame is None:
+			return
+		dialog = ChatDialog(mainFrame)
+		dialog.onNew(cast(wx.CommandEvent, None))
 
 	@scriptHandler.script(
 		# Translators: Description of the script which allows to continue an existing chat.
 		description=_("Opens the prompt to continue an existing OpenRouter chat."),
 	)
-	def script_continueChat(self, gesture):
-		dialog = ChatDialog(gui.mainFrame)
-		dialog.onContinue(None)
+	def script_continueChat(self, gesture: Any) -> None:
+		mainFrame = gui.mainFrame
+		if mainFrame is None:
+			return
+		dialog = ChatDialog(mainFrame)
+		dialog.onContinue(cast(wx.CommandEvent, None))
 
 	@scriptHandler.script(
 		# Translators: Description of the script which allows to show OpenRouter settings panel..
 		description=_("Opens the add-on settings panel."),
 	)
-	def script_showOpenRouterSettingsPanel(self, gesture):
-		gui.mainFrame.popupSettingsDialog(
+	def script_showOpenRouterSettingsPanel(self, gesture: Any) -> None:
+		mainFrame = gui.mainFrame
+		if mainFrame is None:
+			return
+
+		# Use cast(Any) to bypass the partially unknown type of popupSettingsDialog
+		cast(Any, mainFrame).popupSettingsDialog(
 			NVDASettingsDialog,
-			OpenRouterSettingsPanel
+			OpenRouterSettingsPanel,
 		)
