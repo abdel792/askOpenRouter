@@ -33,17 +33,17 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				"apiKey": "string(default='')",
 				"fullHistory": "boolean(default=True)",
 				"useAllModels": "boolean(default=False)",
-				"selectedModel": "string(default='')"
+				"selectedModel": "string(default='')",
 			}
 
 		gui.settingsDialogs.NVDASettingsDialog.categoryClasses.append(
-			OpenRouterSettingsPanel
+			OpenRouterSettingsPanel,
 		)
 
 	def terminate(self):
 		if OpenRouterSettingsPanel in gui.settingsDialogs.NVDASettingsDialog.categoryClasses:
 			gui.settingsDialogs.NVDASettingsDialog.categoryClasses.remove(
-				OpenRouterSettingsPanel
+				OpenRouterSettingsPanel,
 			)
 
 	def onChatDialog(self, evt):
@@ -83,5 +83,5 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_showOpenRouterSettingsPanel(self, gesture):
 		gui.mainFrame.popupSettingsDialog(
 			NVDASettingsDialog,
-			OpenRouterSettingsPanel
+			OpenRouterSettingsPanel,
 		)
