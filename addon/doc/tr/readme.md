@@ -1,21 +1,20 @@
 # OpenRouter'a Sor
 
-- Yazar(lar) : Abdel.
+* Yazar(lar) : Abdel.
 
 Bu NVDA eklentisi, OpenRouter platformu tarafından sağlanan Yapay Zeka modelleriyle doğrudan ekran okuyucunuzdan etkileşim kurmanıza olanak tanır.
 
 Eklenti her ikisini de destekler:
-
-- Ücretsiz modellerin otomatik rastgele seçimi
-- Mevcut herhangi bir modelin manuel seçimi (ücretli olanlar dahil)
+* Ücretsiz modellerin otomatik rastgele seçimi
+* Mevcut herhangi bir modelin manuel seçimi (ücretli olanlar dahil)
 
 ## Temel Özellikler
 
-- Hızlı Erişim: Sohbet arayüzünü istediğiniz zaman küresel bir kısayolla açın.
-- Konuşma Yönetimi: Yeni bir sohbet başlatın veya önceki sohbetinize devam edin.
-- Akıllı Ücretsiz Model Rotasyonu: Günlük kullanım kotalarını optimize etmek için otomatik olarak rastgele bir ücretsiz model seçer.
-- Manuel Model Seçimi: Ayarlar panelinden belirli bir modeli (ücretli modeller dahil) seçin.
-- Erişilebilir Sonuçlar: Yanıtları, isteğe bağlı tam geçmiş görüntüleme özelliğiyle net, gezinmesi kolay bir pencerede görüntüleyin.
+* Hızlı Erişim: Sohbet arayüzünü istediğiniz zaman küresel bir kısayolla açın.
+* Konuşma Yönetimi: Yeni bir sohbet başlatın veya önceki sohbetinize devam edin.
+* Akıllı Ücretsiz Model Rotasyonu: Günlük kullanım kotalarını optimize etmek için otomatik olarak rastgele bir ücretsiz model seçer.
+* Manuel Model Seçimi: Ayarlar panelinden belirli bir modeli (ücretli modeller dahil) seçin.
+* Erişilebilir Sonuçlar: Yanıtları, isteğe bağlı tam geçmiş görüntüleme özelliğiyle net, gezinmesi kolay bir pencerede görüntüleyin.
 
 ## Yapılandırma: API Anahtarınızı Alma ve Kurma
 
@@ -32,7 +31,7 @@ Bu eklentiyi kullanmak için OpenRouter'dan bir API anahtarınızın olması ger
 5. Anahtarınıza bir ad verin (örneğin: "OpenRouter API anahtarım") ve "Create"e tıklayın.
 6. Önemli: Anahtarınız yalnızca bir kez görüntülenecektir. Hemen kopyalayın ve güvenli bir yerde saklayın.
 
-### 2)2.2) NVDA'da anahtarın ayarlanması
+### 2. NVDA'da anahtarın ayarlanması
 
 1. NVDA menüsünü açın (NVDA + N).
 2. Tercihler'e ve ardından Ayarlar'a gidin.
@@ -57,34 +56,33 @@ Ask OpenRouter ayarları kategorisinde yeni bir seçenek bulacaksınız:
 
 Bu seçenek modellerin nasıl seçildiğini kontrol eder.
 
-###
+### Seçenek İŞARETİ KALDIRILMADIĞINDA (varsayılan davranış)
 
-- Eklenti, her yeni konuşma için otomatik olarak rastgele bir ücretsiz model seçer.
-- Mevcut ücretsiz modeller arasında dönüşümlü olarak çalışır.
-- Bu, kullanımın dağıtılmasına ve hız sınırlarının önlenmesine yardımcı olur.
+* Eklenti, her yeni konuşma için otomatik olarak rastgele bir ücretsiz model seçer.
+* Mevcut ücretsiz modeller arasında dönüşümlü olarak çalışır.
+* Bu, kullanımın dağıtılmasına ve hız sınırlarının önlenmesine yardımcı olur.
 
 ### Seçenek işaretlendiğinde
 
 Bu seçenek etkinleştirildiğinde, onay kutusunun ardından otomatik olarak mevcut modellerin bir listesi görünür.
 
-- Liste, istem jetonu (prompt token) fiyatına (giriş jetonu başına maliyet) göre artan sırada, en düşükten en yükseğe doğru sıralanmıştır.
-- Yalnızca desteği kesilmemiş ve geçerli sağlayıcısı olan modeller görüntülenir.
+* Liste, istem jetonu (prompt token) fiyatına (giriş jetonu başına maliyet) göre artan sırada, en düşükten en yükseğe doğru sıralanmıştır.
+* Yalnızca desteği kesilmemiş ve geçerli sağlayıcısı olan modeller görüntülenir.
 
 ### Bu seçenek etkinleştirildiğinde ne yapabilirsiniz?
 
-- Mevcut herhangi bir modeli seçin.
-- Ücretli modelleri kullanın (yeterli OpenRouter krediniz varsa).
-- İhtiyaçlarınıza en uygun modeli seçin.
-- Sohbetlerinizde seçtiğiniz modeli kullanmaya devam edin (otomatik rotasyon yok).
+* Mevcut herhangi bir modeli seçin.
+* Ücretli modelleri kullanın (yeterli OpenRouter krediniz varsa).
+* İhtiyaçlarınıza en uygun modeli seçin.
+* Sohbetlerinizde seçtiğiniz modeli kullanmaya devam edin (otomatik rotasyon yok).
 
 ### İstem jetonu (prompt token) nedir?
 
 Bir istem jetonu, modele gönderilen küçük bir metin birimini (sorunuzu veya girdinizi) temsil eder.
 
 Modeller genellikle aşağıdakiler için ayrı olarak faturalandırılır:
-
-- Giriş jetonları (prompt)
-- Çıkış jetonları (completion)
+* Giriş jetonları (prompt)
+* Çıkış jetonları (completion)
 
 ## Nasıl Kullanılır?
 
@@ -109,9 +107,9 @@ NVDA menüsü → Tercihler → Girdi Hareketleri → Ask OpenRouter
 
 "New Chat" veya "Continue Chat" seçeneğini seçtikten sonra:
 
-- Çok satırlı bir metin alanı görünür.
-- Enter'a basıldığında yeni bir satır eklenir.
-- Mesajınızı göndermek için:
+* Çok satırlı bir metin alanı görünür.
+* Enter'a basıldığında yeni bir satır eklenir.
+* Mesajınızı göndermek için:
   - Tamam düğmesine ulaşmak için Tab'a basın.
   - Enter'a basın.
 
@@ -119,9 +117,9 @@ NVDA menüsü → Tercihler → Girdi Hareketleri → Ask OpenRouter
 
 İşlemden sonra aşağıdakileri içeren bir sonuç penceresi görünür:
 
-- "Siz:" (You said:) ve ardından mesajınız.
-- "Model yanıt verdi:" (The model replied:) ve ardından gelen yanıt.
-- Yanıtı kopyalamak için "Kopyala" düğmesi.
+* "Siz:" (You said:) ve ardından mesajınız.
+* "Model yanıt verdi:" (The model replied:) ve ardından gelen yanıt.
+* Yanıtı kopyalamak için "Kopyala" düğmesi.
 
 Tam geçmiş gösterimi etkinleştirildiğinde, her bir değişim başlıklarla net bir şekilde birbirinden ayrılır; bu sayede NVDA'nın hızlı dolaşım tuşlarını kullanarak kolayca gezinebilirsiniz.
 
@@ -138,16 +136,16 @@ Konuşma geçmişinin tamamı yerine yalnızca en son yanıtı görüntülemeyi 
 
 ## Atanmamış Komut Dosyaları
 
-Aşağıdaki komutlara hareket atanmamıştır.
+Aşağıdaki komutlar  için hareketler atanmamıştır.
 Bunları şu yoldan tanımlayabilirsiniz:
 
 Tercihler → Girdi Hareketleri → Ask OpenRouter
 
 Kullanılabilir komutlar:
 
-- Eklenti ayarlar panelini aç
-- Doğrudan yeni bir sohbet başlat
-- Doğrudan mevcut bir sohbete devam et
+* Eklenti ayarlar panelini aç
+* Doğrudan yeni bir sohbet başlat
+* Doğrudan mevcut bir sohbete devam et
 
 ## Ücretsiz Modeller, Ücretli Modeller ve Kotalar
 
@@ -155,8 +153,8 @@ Kullanılabilir komutlar:
 
 "Ücretli modeller dahil tüm modelleri kullan" seçeneğinin işareti kaldırıldığında:
 
-- Yalnızca OpenRouter'da ücretsiz olarak etiketlenen modeller kullanılır.
-- Ücretsiz modeller şunlara sahiptir:
+* Yalnızca OpenRouter'da ücretsiz olarak etiketlenen modeller kullanılır.
+* Ücretsiz modeller şunlara sahiptir:
   - Sınırlı günlük kotalar
   - Paylaşımlı hız sınırları (rate limits)
   - Olası geçici ulaşılamama durumları
@@ -167,16 +165,15 @@ Eklenti, kullanılabilirliği artırmak için ücretsiz modeller arasında otoma
 
 "Ücretli modeller dahil tüm modelleri kullan" seçeneği işaretlendiğinde:
 
-- Eklenti tam olarak seçtiğiniz modeli kullanır.
-- Bu, ücretli modelleri içerebilir.
-- Yeterli OpenRouter krediniz olmalıdır.
-- Sağlayıcı hız sınırları geçerli olabilir.
+* Eklenti tam olarak seçtiğiniz modeli kullanır.
+* Bu, ücretli modelleri içerebilir.
+* Yeterli OpenRouter krediniz olmalıdır.
+* Sağlayıcı hız sınırları geçerli olabilir.
 
 Şu hatalar:
-
-- 402 (yetersiz kredi)
-- 429 (hız sınırı aşıldı)
-- 404 (gizlilik ayarları tarafından izin verilmeyen model)
+* 402 (yetersiz kredi)
+* 429 (hız sınırı aşıldı)
+* 404 (gizlilik ayarları tarafından izin verilmeyen model)
 
 sorun hakkında sizi bilgilendirmek için doğrudan görüntülenir.
 
@@ -194,13 +191,13 @@ Kamuya açık/ücretsiz model uç noktalarına izin verildiğinden emin olun.
 
 ## Uyumluluk
 
-- Bu eklenti, NVDA'nın 2025.1 ve sonraki sürümleriyle uyumludur.
+* Bu eklenti, NVDA'nın 2025.1 ve sonraki sürümleriyle uyumludur.
 
 ## 20260221.0.0 için değişiklikler
 
-- Ayarlar panelinden mevcut tüm modellerin manuel seçimi eklendi
-- Ücretli modelleri kullanma yeteneği eklendi
+* Ayarlar panelinden mevcut tüm modellerin manuel seçimi eklendi
+* Ücretli modelleri kullanma yeteneği eklendi
 
 ## 20260217.0.0 için değişiklikler
 
-- İlk sürüm
+* İlk sürüm

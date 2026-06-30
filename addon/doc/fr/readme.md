@@ -1,21 +1,20 @@
 # Ask OpenRouter
 
-- Auteur(s) : Abdel.
+* Auteur(s) : Abdel.
 
 Cette extension pour NVDA vous permet d'interagir avec les modèles d'intelligence artificielle proposés par la plateforme OpenRouter directement depuis votre lecteur d'écran.
 
 L'extension prend en charge :
-
-- La sélection automatique et aléatoire de modèles gratuits
-- Le choix manuel de n'importe quel modèle disponible (y compris les modèles payants)
+* La sélection automatique et aléatoire de modèles gratuits
+* Le choix manuel de n'importe quel modèle disponible (y compris les modèles payants)
 
 ## Caractéristiques principales
 
-- Accès rapide : Ouvrez l'interface de discussion à tout moment grâce à un raccourci global.
-- Gestion des conversations : Démarrez une nouvelle conversation ou poursuivez votre échange précédent.
-- Rotation intelligente des modèles gratuits : Sélectionne automatiquement un modèle gratuit au hasard pour optimiser les quotas d'utilisation quotidienne.
-- Sélection manuelle du modèle : Choisissez un modèle spécifique (y compris les modèles payants) depuis le panneau des paramètres.
-- Résultats accessibles : Consultez les réponses dans une fenêtre claire et facile à parcourir avec affichage optionnel de l'historique complet.
+* Accès rapide : Ouvrez l'interface de discussion à tout moment grâce à un raccourci global.
+* Gestion des conversations : Démarrez une nouvelle conversation ou poursuivez votre échange précédent.
+* Rotation intelligente des modèles gratuits : Sélectionne automatiquement un modèle gratuit au hasard pour optimiser les quotas d'utilisation quotidienne.
+* Sélection manuelle du modèle : Choisissez un modèle spécifique (y compris les modèles payants) depuis le panneau des paramètres.
+* Résultats accessibles : Consultez les réponses dans une fenêtre claire et facile à parcourir avec affichage optionnel de l'historique complet.
 
 ## Configuration : Obtenir et installer votre clé API
 
@@ -46,7 +45,7 @@ Dans le panneau des paramètres de NVDA, juste après le champ "OpenRouter API K
 
 "Afficher la clé API"
 
-Si elle est cochée, les caractères de la clé API deviennent visibles.
+If checked, the characters of the API key become visible.
 Par défaut, ils sont masqués pour des raisons de sécurité.
 
 ## Paramètres de sélection du modèle
@@ -59,32 +58,31 @@ Cette option contrôle la manière dont les modèles sont sélectionnés.
 
 ### Lorsque l'option est DÉCOCHÉE (comportement par défaut)
 
-- L'extension sélectionne automatiquement un modèle gratuit au hasard pour chaque nouvelle conversation.
-- Elle alterne entre les modèles gratuits disponibles.
-- Cela permet de répartir l'utilisation et d'éviter les limites de débit.
+* L'extension sélectionne automatiquement un modèle gratuit au hasard pour chaque nouvelle conversation.
+* Elle alterne entre les modèles gratuits disponibles.
+* Cela permet de répartir l'utilisation et d'éviter les limites de débit.
 
 ### Lorsque l'option est COCHÉE
 
 Lorsque cette option est activée, une liste des modèles disponibles apparaît automatiquement après la case à cocher.
 
-- La liste est triée par ordre croissant selon le prix du jeton de prompt (coût par jeton d'entrée), du moins cher au plus cher.
-- Seuls les modèles non obsolètes avec des fournisseurs valides sont affichés.
+* La liste est triée par ordre croissant selon le prix du jeton de prompt (coût par jeton d'entrée), du moins cher au plus cher.
+* Seuls les modèles non obsolètes avec des fournisseurs valides sont affichés.
 
 ### Que pouvez-vous faire lorsque cette option est activée ?
 
-- Choisir n'importe quel modèle disponible.
-- Utiliser des modèles payants (si vous avez suffisamment de crédits OpenRouter).
-- Sélectionner le modèle qui correspond le mieux à vos besoins.
-- Continuer à utiliser le même modèle sélectionné pour vos conversations (pas de rotation automatique).
+* Choisir n'importe quel modèle disponible.
+* Utiliser des modèles payants (si vous avez suffisamment de crédits OpenRouter).
+* Sélectionner le modèle qui correspond le mieux à vos besoins.
+* Continuer à utiliser le même modèle sélectionné pour vos conversations (pas de rotation automatique).
 
 ### Qu'est-ce qu'un jeton (token) de prompt ?
 
 Un jeton (token) de prompt représente une petite unité de texte envoyée au modèle (votre question ou entrée).
 
 Les modèles sont généralement facturés séparément pour :
-
-- Les jetons d'entrée (prompt)
-- Les jetons de sortie (complétion/réponse)
+* Les jetons d'entrée (prompt)
+* Les jetons de sortie (complétion/réponse)
 
 ## Mode d'emploi
 
@@ -109,9 +107,9 @@ La boîte de dialogue contient trois boutons :
 
 Après avoir sélectionné "New Chat" ou "Continue Chat" :
 
-- Un champ de texte multiligne apparaît.
-- Appuyer sur Entrée insère une nouvelle ligne.
-- Pour envoyer votre message :
+* Un champ de texte multiligne apparaît.
+* Appuyer sur Entrée insère une nouvelle ligne.
+* Pour envoyer votre message :
   - Appuyez sur Tab pour atteindre le bouton OK.
   - Appuyez sur Entrée.
 
@@ -119,9 +117,9 @@ Après avoir sélectionné "New Chat" ou "Continue Chat" :
 
 Après le traitement, une fenêtre de résultats apparaît contenant :
 
-- "Vous avez dit :" suivi de votre message.
-- "Le modèle a répondu :" suivi de la réponse.
-- Un bouton "Copier" pour copier la réponse.
+* "Vous avez dit :" suivi de votre message.
+* "Le modèle a répondu :" suivi de la réponse.
+* Un bouton "Copier" pour copier la réponse.
 
 Si l'affichage de l'historique complet est activé, chaque échange est clairement séparé par des titres, ce qui facilite la navigation à l'aide des touches de navigation rapide de NVDA.
 
@@ -138,16 +136,16 @@ Si vous préférez n'afficher que la dernière réponse au lieu de l'historique 
 
 ## Scripts non assignés
 
-Les scripts suivants n'ont pas de raccourcis assignés.
+The following scripts do not have gestures assigned.
 Vous pouvez les définir dans :
 
 Préférences → Gestes de commandes → Ask OpenRouter
 
 Scripts disponibles :
 
-- Ouvrir le panneau des paramètres de l'extension
-- Démarrer directement une nouvelle discussion
-- Continuer directement une discussion existante
+* Ouvrir le panneau des paramètres de l'extension
+* Démarrer directement une nouvelle discussion
+* Continuer directement une discussion existante
 
 ## Modèles gratuits, modèles payants et quotas
 
@@ -155,8 +153,8 @@ Scripts disponibles :
 
 Lorsque "Utiliser tous les modèles, y compris les payants" est décoché :
 
-- Seuls les modèles étiquetés comme gratuits sur OpenRouter sont utilisés.
-- Les modèles gratuits ont :
+* Seuls les modèles étiquetés comme gratuits sur OpenRouter sont utilisés.
+* Les modèles gratuits ont :
   - Des quotas quotidiens limités
   - Des limites de débit partagées
   - Une indisponibilité temporaire possible
@@ -167,16 +165,15 @@ L'extension alterne automatiquement entre les modèles gratuits pour améliorer 
 
 Lorsque "Utiliser tous les modèles, y compris les payants" est coché :
 
-- L'extension utilise exactement le modèle que vous avez sélectionné.
-- Cela peut inclure des modèles payants.
-- Vous devez avoir suffisamment de crédits OpenRouter.
-- Les limites de débit du fournisseur peuvent s'appliquer.
+* L'extension utilise exactement le modèle que vous avez sélectionné.
+* Cela peut inclure des modèles payants.
+* Vous devez avoir suffisamment de crédits OpenRouter.
+* Les limites de débit du fournisseur peuvent s'appliquer.
 
 Les erreurs telles que :
-
-- 402 (crédits insuffisants)
-- 429 (limite de débit atteinte)
-- 404 (modèle non autorisé par les paramètres de confidentialité)
+* 402 (crédits insuffisants)
+* 429 (limite de débit atteinte)
+* 404 (modèle non autorisé par les paramètres de confidentialité)
 
 sont affichées directement pour vous informer du problème.
 
@@ -194,13 +191,13 @@ Assurez-vous que les points d'accès (endpoints) pour les modèles publics/gratu
 
 ## Compatibilité
 
-- Cette extension est compatible avec les versions de NVDA allant de 2025.1 et ultérieures.
+* Cette extension est compatible avec les versions de NVDA allant de 2025.1 et ultérieures.
 
 ## Changements pour la version 20260221.0.0
 
-- Ajout de la sélection manuelle de n'importe quel modèle disponible depuis le panneau des paramètres.
-- Ajout de la possibilité d'utiliser des modèles payants.
+* Ajout de la sélection manuelle de n'importe quel modèle disponible depuis le panneau des paramètres.
+* Ajout de la possibilité d'utiliser des modèles payants.
 
 ## Changements pour la version 20260217.0.0
 
-- Version initiale.
+* Version initiale.
