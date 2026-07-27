@@ -29,8 +29,7 @@ Once configured, you can open a dialog that lets you start a new conversation or
 	addon_version="20260727.0.0",
 	# Brief changelog for this version
 	# Translators: what's new content for the add-on version to be shown in the add-on store
-	addon_changelog=_("""* Updated translations from Crowdin
-* Added support for NVDA 2026 API"""),
+	addon_changelog=_("""* Updated translations from Crowdin"""),
 	# Author(s)
 	addon_author="Abdelkrim BENSAÏD <abdelkrim.bensaid@gmail.com>",
 	# URL for the add-on documentation support
