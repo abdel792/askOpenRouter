@@ -26,7 +26,7 @@ You can either use automatic random selection of free models or choose a specifi
 To use this add-on, you must create an account on https://openrouter.ai and generate an API key.
 Once configured, you can open a dialog that lets you start a new conversation or continue an existing one."""),
 	# version
-	addon_version="20260505.0.0",
+	addon_version="20260727.0.0",
 	# Brief changelog for this version
 	# Translators: what's new content for the add-on version to be shown in the add-on store
 	addon_changelog=_("""* Updated translations from Crowdin
