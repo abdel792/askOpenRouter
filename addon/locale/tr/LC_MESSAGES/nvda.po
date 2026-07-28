@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nvdaaddons\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2026-06-30 10:06+0000\n"
-"PO-Revision-Date: 2026-07-21 06:05\n"
+"POT-Creation-Date: 2026-07-28 09:07+0000\n"
+"PO-Revision-Date: 2026-07-28 09:11\n"
 "Last-Translator: \n"
 "Language-Team: Turkish\n"
 "Language: tr_TR\n"
@@ -188,8 +188,6 @@ msgstr "Bu eklenti OpenRouter platformunda bulunan Yapay Zeka modellerine soru s
 #. Brief changelog for this version
 #. Translators: what's new content for the add-on version to be shown in the add-on store
 #: buildVars.py:32
-msgid "* Updated translations from Crowdin\n"
-"* Added support for NVDA 2026 API"
-msgstr "* Crowdin'den güncellenmiş çeviriler\n"
-"* NVDA 2026 API'si için destek eklendi"
+msgid "* Updated translations from Crowdin"
+msgstr ""
 
