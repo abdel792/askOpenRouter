@@ -5,15 +5,17 @@
 # This file is covered by the GNU General Public License.
 # See the file COPYING for more details.
 
-import scriptHandler
-import config
-import wx
+from collections.abc import Callable
+
 import addonHandler
+import config
 import globalPluginHandler
 import gui
-from typing import Callable
-from .dialogs import addonSummary, OpenRouterSettingsPanel, ChatDialog
+import scriptHandler
+import wx
 from gui.settingsDialogs import NVDASettingsDialog
+
+from .dialogs import ChatDialog, OpenRouterSettingsPanel, addonSummary
 from .functions import disableInSecureMode
 
 addonHandler.initTranslation()
