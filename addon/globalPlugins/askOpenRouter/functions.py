@@ -5,22 +5,24 @@
 # This file is covered by the GNU General Public License.
 # See the file COPYING for more details.
 
-import wx
-import globalPluginHandler
-import globalVars
+import json
 import os
-import addonHandler
 import pickle
 import random
-import markdown
-import json
-import config
-import ui
-import gui
-import urllib.request
-import urllib.error
 import time
-from typing import List, Dict, Callable, Optional, Any
+import urllib.error
+import urllib.request
+from collections.abc import Callable
+from typing import Any
+
+import addonHandler
+import config
+import globalPluginHandler
+import globalVars
+import gui
+import markdown
+import ui
+import wx
 
 addonHandler.initTranslation()
 
@@ -28,7 +30,7 @@ addonHandler.initTranslation()
 _: Callable[[str], str]
 
 # Temporary in-memory blacklist for unavailable models
-_unavailableModels: Dict[str, float] = {}
+_unavailableModels: dict[str, float] = {}
 
 # Cooldowns (seconds)
 _RATE_LIMIT_COOLDOWN: int = 300  # 429
@@ -76,7 +78,7 @@ def loadModel(filename: str) -> str:
 	return ""
 
 
-def saveHistory(history: List[Dict[str, str]], filename: str) -> None:
+def saveHistory(history: list[dict[str, str]], filename: str) -> None:
 	"""
 	Serialize and save conversation history to disk.
 
@@ -91,7 +93,7 @@ def saveHistory(history: List[Dict[str, str]], filename: str) -> None:
 		pickle.dump(history, f)
 
 
-def loadHistory(filename: str) -> List[Dict[str, str]]:
+def loadHistory(filename: str) -> list[dict[str, str]]:
 	"""
 	Load serialized conversation history from disk.
 
@@ -171,7 +173,7 @@ def getRandomFreeModel(apiKey: str) -> str:
 
 	modelsURL: str = "https://openrouter.ai/api/v1/models"
 
-	headers: Dict[str, str] = {
+	headers: dict[str, str] = {
 		"Authorization": f"Bearer {apiKey}",
 		"User-Agent": "Python-urllib",
 	}
@@ -183,7 +185,7 @@ def getRandomFreeModel(apiKey: str) -> str:
 
 	models = data["data"]
 
-	candidates: List[str] = [
+	candidates: list[str] = [
 		m["id"]
 		for m in models
 		if float(m.get("pricing", {}).get("prompt", 1)) == 0
@@ -201,7 +203,7 @@ def getRandomFreeModel(apiKey: str) -> str:
 	return random.choice(candidates)
 
 
-def getAvailableModels(apiKey: str) -> List[Dict[str, object]]:
+def getAvailableModels(apiKey: str) -> list[dict[str, object]]:
 	"""
 	Retrieve the full list of available models for the current user.
 
@@ -232,7 +234,7 @@ def getAvailableModels(apiKey: str) -> List[Dict[str, object]]:
 	"""
 	modelsURL: str = "https://openrouter.ai/api/v1/models"
 
-	headers: Dict[str, str] = {
+	headers: dict[str, str] = {
 		"Authorization": f"Bearer {apiKey}",
 		"User-Agent": "Python-urllib",
 	}
@@ -244,7 +246,7 @@ def getAvailableModels(apiKey: str) -> List[Dict[str, object]]:
 
 	models = data.get("data", [])
 
-	availableModels: List[Dict[str, object]] = []
+	availableModels: list[dict[str, object]] = []
 
 	for m in models:
 		if m.get("deprecated", False):
@@ -266,7 +268,7 @@ def getAvailableModels(apiKey: str) -> List[Dict[str, object]]:
 	return availableModels
 
 
-def _sendRequest(url: str, headers: Dict[str, str], data: Dict) -> str:
+def _sendRequest(url: str, headers: dict[str, str], data: dict) -> str:
 	"""
 	Send an HTTP POST request to OpenRouter.
 
@@ -326,8 +328,8 @@ def getHistory(filename: str) -> str:
 		str: HTML-formatted conversation history,
 		or an empty string if no history exists.
 	"""
-	historyLines: List[str] = []
-	allChat: List[Dict[str, str]] = []
+	historyLines: list[str] = []
+	allChat: list[dict[str, str]] = []
 	# Translators: Message announcing what the user said.
 	userQuestion: str = _("You said:")
 	# Translators: Message announcing what the model responded.
@@ -427,7 +429,7 @@ def askOpenRouter(prompt: str, apiKey: str, new: bool = True) -> None:
 				)
 				return
 
-	history: List[Dict[str, str]] = loadHistory(historyFile)
+	history: list[dict[str, str]] = loadHistory(historyFile)
 
 	history.append(
 		{
@@ -436,21 +438,21 @@ def askOpenRouter(prompt: str, apiKey: str, new: bool = True) -> None:
 		},
 	)
 
-	headers: Dict[str, str] = {
+	headers: dict[str, str] = {
 		"Authorization": f"Bearer {apiKey}",
 		"Content-Type": "application/json",
 		"HTTP-Referer": "http://localhost",
 		"X-Title": "My question",
 	}
 
-	data: Dict[str, Any] = {
+	data: dict[str, Any] = {
 		"model": model,
 		"messages": history,
 	}
 
 	maxAttempts: int = 5
 	attempt: int = 0
-	answer: Optional[str] = None
+	answer: str | None = None
 
 	while attempt < maxAttempts:
 		try:
