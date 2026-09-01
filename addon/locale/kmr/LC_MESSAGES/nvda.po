@@ -3,175 +3,175 @@ msgstr ""
 "Project-Id-Version: nvdaaddons\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2026-07-28 09:07+0000\n"
-"PO-Revision-Date: 2026-09-01 11:48\n"
+"PO-Revision-Date: 2026-08-28 06:29\n"
 "Last-Translator: \n"
-"Language-Team: Russian\n"
-"Language: ru_RU\n"
+"Language-Team: Kurmanji (Kurdish)\n"
+"Language: kmr_TR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: nvdaaddons\n"
 "X-Crowdin-Project-ID: 780748\n"
-"X-Crowdin-Language: ru\n"
+"X-Crowdin-Language: kmr\n"
 "X-Crowdin-File: askOpenRouter.pot\n"
 "X-Crowdin-File-ID: 458\n"
 
 #. Translators: Title of the dialog box.
 #: addon\globalPlugins\askOpenRouter\dialogs.py:54
 msgid "Chat Manager"
-msgstr "Менеджер Чата"
+msgstr "Gerînendeyê Sohbetê"
 
 #. Translators: Prompt label to create a new chat.
 #: addon\globalPlugins\askOpenRouter\dialogs.py:68
 msgid "C&reate a New Chat"
-msgstr "Создать &новый чат"
+msgstr "Sohbeteke Nû Biafirîne"
 
 #. Translators: Prompt label to continue an existing chat.
 #: addon\globalPlugins\askOpenRouter\dialogs.py:74
 msgid "Co&ntinue a Chat"
-msgstr "&Продолжить чат"
+msgstr "Sohbetê Berdewam Bike"
 
 #. Translators: Label of the closing button.
 #: addon\globalPlugins\askOpenRouter\dialogs.py:80
 msgid "&Close"
-msgstr "&Закрыть"
+msgstr "&Nêzîkî"
 
 #. Translators: Title of the dialog box to start a new chat.
 #: addon\globalPlugins\askOpenRouter\dialogs.py:117
 msgid "New Chat"
-msgstr "Новый Чат"
+msgstr "Sohbeta Nû"
 
 #. Translators: Title of the dialog box to continue an existing chat.
 #: addon\globalPlugins\askOpenRouter\dialogs.py:127
 msgid "Continue Chat"
-msgstr "Продолжить Чат"
+msgstr "Berdewamiya Sohbetê"
 
 #. Translators: Label of the field that must contain the OpenRouter API key.
 #: addon\globalPlugins\askOpenRouter\dialogs.py:164
 msgid "OpenRouter API Key:"
-msgstr "API-ключ OpenRouter:"
+msgstr "Kilîda API ya OpenRouter:"
 
 #. Translators: Label of the checkbox to display the OpenRouter API key.
 #: addon\globalPlugins\askOpenRouter\dialogs.py:185
 msgid "Show API key"
-msgstr "Показать API-ключ"
+msgstr "Kilîta API-yê nîşan bide"
 
 #. Translators: Label of the checkbox to display chat history.
 #: addon\globalPlugins\askOpenRouter\dialogs.py:201
 msgid "Display the full chat history for continuous discussions"
-msgstr "Отображать полную историю чата для продолжающихся обсуждений"
+msgstr "Ji bo nîqaşên berdewam dîroka sohbeta tevahî nîşan bide"
 
 #. Translators:
 #. Translators: Label of the checkbox to show the list of models, including paid ones.
 #: addon\globalPlugins\askOpenRouter\dialogs.py:217
 msgid "Use all models, including paid ones."
-msgstr "Использовать все модели, включая платные."
+msgstr "Hemî modelan bikar bînin, tevî yên dravî."
 
 #. Translators: Message informing that no free model is available.
 #: addon\globalPlugins\askOpenRouter\functions.py:199
 msgid "No free model currently available."
-msgstr "В данный момент нет доступной бесплатной модели."
+msgstr "Niha modelek belaş tune."
 
 #. Translators: Message announcing what the user said.
 #: addon\globalPlugins\askOpenRouter\functions.py:332
 msgid "You said:"
-msgstr "Вы сказали:"
+msgstr "Te got:"
 
 #. Translators: Message announcing what the model responded.
 #: addon\globalPlugins\askOpenRouter\functions.py:334
 msgid "Model replied:"
-msgstr "Модель ответила:"
+msgstr "Modelê bersiv da:"
 
 #. Translators: Message informing that no free models are available.
 #: addon\globalPlugins\askOpenRouter\functions.py:406
 #: addon\globalPlugins\askOpenRouter\functions.py:424
 msgid "No free model available at the moment."
-msgstr "В данный момент нет доступной бесплатной модели."
+msgstr "Niha modelek belaş tune."
 
 #. Translators: Title of the error message.
 #: addon\globalPlugins\askOpenRouter\functions.py:408
 #: addon\globalPlugins\askOpenRouter\functions.py:426
 msgid "Model Error"
-msgstr "Ошибка Модели"
+msgstr "Çewtiya Modelê"
 
 #. Translators: Title of the HTTP error message.
 #: addon\globalPlugins\askOpenRouter\functions.py:466
 #: addon\globalPlugins\askOpenRouter\functions.py:487
 msgid "HTTP Error"
-msgstr "Ошибка HTTP"
+msgstr "Çewtiya HTTPê"
 
 #. Translators: Network error message.
 #: addon\globalPlugins\askOpenRouter\functions.py:494
 msgid "Network error:"
-msgstr "Ошибка сети:"
+msgstr "Çewtiya torê:"
 
 #. Translators: Message informing that no free models are available at the moment.
 #: addon\globalPlugins\askOpenRouter\functions.py:502
 msgid "All free models are currently unavailable. Please try again later."
-msgstr "Все бесплатные модели в данный момент недоступны. Пожалуйста, повторите попытку позже."
+msgstr "Niha hemû modelên belaş peyda nabin. Ji kerema xwe paşê dîsa biceribînin."
 
 #. Translators: Title of the model unavailable error.
 #: addon\globalPlugins\askOpenRouter\functions.py:504
 msgid "Model Unavailable"
-msgstr "Модель Недоступна"
+msgstr "Model Berdest nîne"
 
 #. Translators: Title of the model response message.
 #: addon\globalPlugins\askOpenRouter\functions.py:527
 msgid "Model Response"
-msgstr "Ответ Модели"
+msgstr "Bersiva Modelê"
 
 #. Translators: Message inviting the user to enter his question.
 #: addon\globalPlugins\askOpenRouter\functions.py:559
 msgid "Please enter the question you want to ask OpenRouter"
-msgstr "Пожалуйста, введите вопрос, который вы хотите задать OpenRouter"
+msgstr "Ji kerema xwe pirsa ku hûn dixwazin ji OpenRouter bipirsin binivîsin"
 
 #. Translators: Message informing the user that the field is empty, he must fill it in.
 #: addon\globalPlugins\askOpenRouter\functions.py:569
 msgid "You did not enter anything. Please try again."
-msgstr "Вы ничего не ввели. Пожалуйста, попробуйте снова."
+msgstr "Te tiştek nenivîsandiye. Ji kerema xwe dîsa biceribîne."
 
 #. Translators: Title of the error message.
 #: addon\globalPlugins\askOpenRouter\functions.py:571
 msgid "Input Error"
-msgstr "Ошибка Ввода"
+msgstr "Çewtiya Têketinê"
 
 #. Translators: Message informing the user that no API key is configured.
 #: addon\globalPlugins\askOpenRouter\functions.py:580
 msgid "No API key is configured. Please configure it in settings."
-msgstr "API-ключ не настроен. Пожалуйста, настройте его в параметрах."
+msgstr "Tu mifteya API-ê nehatiye mîhengkirin. Ji kerema xwe di mîhengan de mîheng bike."
 
 #. Translators: Title of the error message.
 #: addon\globalPlugins\askOpenRouter\functions.py:582
 msgid "Configuration Error"
-msgstr "Ошибка Конфигурации"
+msgstr "Çewtiya Mîhengkirinê"
 
 #. Translators: Description of the script which opens the interaction dialog box with OpenRouter.
 #: addon\globalPlugins\askOpenRouter\__init__.py:57
 msgid "Opens a dialog allowing the user to ask questions to OpenRouter"
-msgstr "Открывает диалог, позволяющий пользователю задавать вопросы OpenRouter"
+msgstr "Paceyek diyalogê vedike ku dihêle bikarhêner pirsan ji OpenRouter bipirse."
 
 #. Translators: Description of the script which allows to create a new chat.
 #: addon\globalPlugins\askOpenRouter\__init__.py:65
 msgid "Opens the prompt to start a new OpenRouter chat."
-msgstr "Открывает приглашение начать новый чат OpenRouter."
+msgstr "Fermana destpêkirina sohbeteke nû ya OpenRouter vedike."
 
 #. Translators: Description of the script which allows to continue an existing chat.
 #: addon\globalPlugins\askOpenRouter\__init__.py:73
 msgid "Opens the prompt to continue an existing OpenRouter chat."
-msgstr "Открывает приглашение продолжить существующий чат OpenRouter."
+msgstr "Fermana berdewamkirina sohbeteke heyî ya OpenRouter vedike."
 
 #. Translators: Description of the script which allows to show OpenRouter settings panel..
 #: addon\globalPlugins\askOpenRouter\__init__.py:81
 msgid "Opens the add-on settings panel."
-msgstr "Открывает панель настроек дополнения."
+msgstr "Panela mîhengên pêvekan vedike."
 
 #. Add-on summary/title, usually the user visible name of the add-on
 #. Translators: Summary/title for this add-on
 #. to be shown on installation and add-on information found in add-on store
 #: buildVars.py:21
 msgid "Ask OpenRouter"
-msgstr "Спросить OpenRouter"
+msgstr "Ji OpenRouter Bipirse"
 
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-on store
@@ -180,14 +180,14 @@ msgid "This add-on allows you to ask questions to Artificial Intelligence models
 "You can either use automatic random selection of free models or choose a specific model manually, including paid ones.\n"
 "To use this add-on, you must create an account on https://openrouter.ai and generate an API key.\n"
 "Once configured, you can open a dialog that lets you start a new conversation or continue an existing one."
-msgstr "Это дополнение позволяет задавать вопросы моделям искусственного интеллекта, доступным на платформе OpenRouter.\n"
-"Вы можете использовать автоматический случайный выбор бесплатных моделей или выбрать конкретную модель вручную, в том числе платную.\n"
-"Чтобы использовать это дополнение, вам необходимо создать учётную запись на https://openrouter.ai и сгенерировать ключ API.\n"
-"После настройки вы можете открыть диалог, позволяющий начать новую беседу или продолжить существующую."
+msgstr "Ev pêvek dihêle hûn pirsan ji modelên Zekaya Sûni yên li ser platforma OpenRouter-ê hene bipirsin.\n"
+"Hûn dikarin hilbijartina otomatîkî ya rasthatî ya modelên belaş bikar bînin an jî modelek taybetî bi destan hilbijêrin, tevî yên bi pere.\n"
+"Ji bo ku hûn vê pêvekê bikar bînin, divê hûn li ser https://openrouter.ai hesabek çêbikin û mifteyek API-yê çêbikin.\n"
+"Piştî ku hate mîheng kirin, hûn dikarin diyalogek vekin ku dihêle hûn sohbetek nû dest pê bikin an jî yeka heyî bidomînin."
 
 #. Brief changelog for this version
 #. Translators: what's new content for the add-on version to be shown in the add-on store
 #: buildVars.py:32
 msgid "* Updated translations from Crowdin"
-msgstr "* Обновлены переводы из Crowdin"
+msgstr "* Wergerên ji Crowdin hatine nûve kirin"
 
