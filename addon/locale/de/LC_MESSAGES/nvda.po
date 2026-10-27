@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: nvdaaddons\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2026-07-28 09:07+0000\n"
-"PO-Revision-Date: 2026-10-20 11:47\n"
+"PO-Revision-Date: 2026-10-27 00:20\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -180,7 +180,10 @@ msgid "This add-on allows you to ask questions to Artificial Intelligence models
 "You can either use automatic random selection of free models or choose a specific model manually, including paid ones.\n"
 "To use this add-on, you must create an account on https://openrouter.ai and generate an API key.\n"
 "Once configured, you can open a dialog that lets you start a new conversation or continue an existing one."
-msgstr ""
+msgstr "Diese Erweiterung ermöglicht es Ihnen, Fragen an Modelle künstlicher Intelligenz zu stellen, die auf der OpenRouter-Plattform verfügbar sind.\n"
+"Sie können entweder eine automatische Zufallsauswahl kostenloser Modelle nutzen oder manuell ein bestimmtes Modell auswählen, einschließlich kostenpflichtiger Modelle.\n"
+"Um dieses Add-on zu verwenden, müssen Sie ein Konto auf https://openrouter.ai erstellen und einen API-Schlüssel generieren.\n"
+"Sobald es konfiguriert ist, können Sie ein Dialogfenster öffnen, mit dem Sie eine neue Unterhaltung beginnen oder eine bestehende fortsetzen können."
 
 #. Brief changelog for this version
 #. Translators: what's new content for the add-on version to be shown in the add-on store
