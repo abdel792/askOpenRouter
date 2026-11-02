@@ -3,14 +3,16 @@
 # Copyright(C) 2026-2028 Abdel <abdelkrim.bensaid@gmail.com>
 # Released under GPL 2
 
-import wx
+from collections.abc import Callable
+from typing import Optional, cast
+
 import addonHandler
 import config
 import gui
-from typing import Callable, List, Dict, Optional, cast
-
+import wx
 from gui.settingsDialogs import SettingsPanel
-from .functions import askOpenRouter, inputBox, getAvailableModels
+
+from .functions import askOpenRouter, getAvailableModels, inputBox
 
 addonHandler.initTranslation()
 
@@ -235,7 +237,7 @@ class OpenRouterSettingsPanel(SettingsPanel):
 		self.sHelper.addItem(self.modelsList, flag=wx.EXPAND)
 
 		self.modelsList.Hide()
-		self.modelsData: List[Dict[str, object]] = []
+		self.modelsData: list[dict[str, object]] = []
 
 		wx.CallAfter(self.onToggleModelsList, None)
 
@@ -256,7 +258,7 @@ class OpenRouterSettingsPanel(SettingsPanel):
 
 		self.Layout()
 
-	def onToggleModelsList(self, evt: Optional[wx.CommandEvent]) -> None:
+	def onToggleModelsList(self, evt: wx.CommandEvent | None) -> None:
 		"""
 		Show or hide the models list depending on checkbox state.
 		"""
@@ -286,7 +288,7 @@ class OpenRouterSettingsPanel(SettingsPanel):
 			return
 
 		try:
-			models: List[Dict[str, object]] = getAvailableModels(apiKey)
+			models: list[dict[str, object]] = getAvailableModels(apiKey)
 		except Exception:
 			return
 
@@ -294,7 +296,7 @@ class OpenRouterSettingsPanel(SettingsPanel):
 
 		self.modelsData = models
 
-		displayNames: List[str] = []
+		displayNames: list[str] = []
 
 		for m in models:
 			price: float = cast(float, m["promptPricing"])
